@@ -1,0 +1,67 @@
+name: Bazzite Package Download Count
+
+on:
+  workflow_dispatch:
+
+jobs:
+  count-downloads:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Calculate total downloads
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ORG="ublue-os"
+          PREFIX="bazzite"
+
+          echo "Fetching package list for $ORG..."
+
+          # GitHub API now returns only package names (strings)
+          packages=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" \
+            "https://api.github.com/orgs/${ORG}/packages?package_type=container&per_page=100" \
+            | jq -r '.[]')
+
+          # Filter only packages that start with "bazzite"
+          packages=$(echo "$packages" | grep "^${PREFIX}")
+
+          echo "Found packages:"
+          echo "$packages"
+
+          total=0
+
+          for pkg in $packages; do
+            echo "Processing package: $pkg"
+
+            # Fetch all versions (handle pagination)
+            page=1
+            while true; do
+              versions=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" \
+                "https://api.github.com/orgs/${ORG}/packages/container/${pkg}/versions?per_page=100&page=${page}")
+
+              count=$(echo "$versions" | jq length)
+
+              # Stop when no more versions
+              if [ "$count" -eq 0 ]; then
+                break
+              fi
+
+              # Sum download counts
+              dl=$(echo "$versions" | jq -r '.[].metadata.container.download_count')
+              for n in $dl; do
+                total=$((total + n))
+              done
+
+              page=$((page + 1))
+            done
+          done
+
+          echo "----------------------------------------"
+          echo "Total download count for all bazzite packages: $total"
+          echo "----------------------------------------"
