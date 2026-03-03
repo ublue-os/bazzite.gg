@@ -19,7 +19,7 @@
     "type": "User",
     "user_view_type": "public",
     "site_admin": false,
-    "contributions": 4927
+    "contributions": 4946
   },
   {
     "login": "EyeCantCU",
@@ -437,6 +437,28 @@
     "type": "User",
     "user_view_type": "public",
     "site_admin": false,
+    "contributions": 17
+  },
+  {
+    "login": "kressb-gitlab",
+    "id": 201506523,
+    "node_id": "U_kgDODAK-2w",
+    "avatar_url": "https://avatars.githubusercontent.com/u/201506523?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/kressb-gitlab",
+    "html_url": "https://github.com/kressb-gitlab",
+    "followers_url": "https://api.github.com/users/kressb-gitlab/followers",
+    "following_url": "https://api.github.com/users/kressb-gitlab/following{/other_user}",
+    "gists_url": "https://api.github.com/users/kressb-gitlab/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/kressb-gitlab/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/kressb-gitlab/subscriptions",
+    "organizations_url": "https://api.github.com/users/kressb-gitlab/orgs",
+    "repos_url": "https://api.github.com/users/kressb-gitlab/repos",
+    "events_url": "https://api.github.com/users/kressb-gitlab/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/kressb-gitlab/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false,
     "contributions": 16
   },
   {
@@ -460,28 +482,6 @@
     "user_view_type": "public",
     "site_admin": false,
     "contributions": 15
-  },
-  {
-    "login": "kressb-gitlab",
-    "id": 201506523,
-    "node_id": "U_kgDODAK-2w",
-    "avatar_url": "https://avatars.githubusercontent.com/u/201506523?v=4",
-    "gravatar_id": "",
-    "url": "https://api.github.com/users/kressb-gitlab",
-    "html_url": "https://github.com/kressb-gitlab",
-    "followers_url": "https://api.github.com/users/kressb-gitlab/followers",
-    "following_url": "https://api.github.com/users/kressb-gitlab/following{/other_user}",
-    "gists_url": "https://api.github.com/users/kressb-gitlab/gists{/gist_id}",
-    "starred_url": "https://api.github.com/users/kressb-gitlab/starred{/owner}{/repo}",
-    "subscriptions_url": "https://api.github.com/users/kressb-gitlab/subscriptions",
-    "organizations_url": "https://api.github.com/users/kressb-gitlab/orgs",
-    "repos_url": "https://api.github.com/users/kressb-gitlab/repos",
-    "events_url": "https://api.github.com/users/kressb-gitlab/events{/privacy}",
-    "received_events_url": "https://api.github.com/users/kressb-gitlab/received_events",
-    "type": "User",
-    "user_view_type": "public",
-    "site_admin": false,
-    "contributions": 14
   },
   {
     "login": "ledif",
@@ -569,7 +569,7 @@
     "type": "User",
     "user_view_type": "public",
     "site_admin": false,
-    "contributions": 11
+    "contributions": 12
   },
   {
     "login": "wolfyreload",
