@@ -841,8 +841,13 @@ code {
 }
 
 .picker-message.red {
-  color: #ff8484;
-  font-weight: 600;
+  color: #f50000;
+  font-weight: 1000;
+  font-size: 25px;
+  letter-spacing: 2px;
+  font-style: normal;
+  font-family: sans-serif;
+  line-height: 1.2;
 }
 
 #features {
