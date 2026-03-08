@@ -841,6 +841,11 @@ code {
 }
 
 .picker-message.red {
+  color: #ff8484;
+  font-weight: 600;
+}
+
+.picker-message.red-deck-nvidia {
   color: #f50000;
   font-weight: 1000;
   font-size: 25px;
