@@ -845,16 +845,6 @@ code {
   font-weight: 600;
 }
 
-.picker-message.red-deck-nvidia {
-  color: #f50000;
-  font-weight: 1000;
-  font-size: 25px;
-  letter-spacing: 2px;
-  font-style: normal;
-  font-family: sans-serif;
-  line-height: 1.2;
-}
-
 #features {
   background-position: center;
 }
