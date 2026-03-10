@@ -19,7 +19,7 @@
     "type": "User",
     "user_view_type": "public",
     "site_admin": false,
-    "contributions": 4948
+    "contributions": 4958
   },
   {
     "login": "EyeCantCU",
@@ -85,7 +85,7 @@
     "type": "User",
     "user_view_type": "public",
     "site_admin": false,
-    "contributions": 179
+    "contributions": 180
   },
   {
     "login": "nicknamenamenick",
@@ -151,7 +151,7 @@
     "type": "Bot",
     "user_view_type": "public",
     "site_admin": false,
-    "contributions": 99
+    "contributions": 107
   },
   {
     "login": "xXJSONDeruloXx",
@@ -261,7 +261,7 @@
     "type": "User",
     "user_view_type": "public",
     "site_admin": false,
-    "contributions": 32
+    "contributions": 33
   },
   {
     "login": "castrojo",
@@ -418,28 +418,6 @@
     "contributions": 19
   },
   {
-    "login": "renner0e",
-    "id": 80410025,
-    "node_id": "MDQ6VXNlcjgwNDEwMDI1",
-    "avatar_url": "https://avatars.githubusercontent.com/u/80410025?v=4",
-    "gravatar_id": "",
-    "url": "https://api.github.com/users/renner0e",
-    "html_url": "https://github.com/renner0e",
-    "followers_url": "https://api.github.com/users/renner0e/followers",
-    "following_url": "https://api.github.com/users/renner0e/following{/other_user}",
-    "gists_url": "https://api.github.com/users/renner0e/gists{/gist_id}",
-    "starred_url": "https://api.github.com/users/renner0e/starred{/owner}{/repo}",
-    "subscriptions_url": "https://api.github.com/users/renner0e/subscriptions",
-    "organizations_url": "https://api.github.com/users/renner0e/orgs",
-    "repos_url": "https://api.github.com/users/renner0e/repos",
-    "events_url": "https://api.github.com/users/renner0e/events{/privacy}",
-    "received_events_url": "https://api.github.com/users/renner0e/received_events",
-    "type": "User",
-    "user_view_type": "public",
-    "site_admin": false,
-    "contributions": 17
-  },
-  {
     "login": "kressb-gitlab",
     "id": 201506523,
     "node_id": "U_kgDODAK-2w",
@@ -456,6 +434,28 @@
     "repos_url": "https://api.github.com/users/kressb-gitlab/repos",
     "events_url": "https://api.github.com/users/kressb-gitlab/events{/privacy}",
     "received_events_url": "https://api.github.com/users/kressb-gitlab/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false,
+    "contributions": 18
+  },
+  {
+    "login": "renner0e",
+    "id": 80410025,
+    "node_id": "MDQ6VXNlcjgwNDEwMDI1",
+    "avatar_url": "https://avatars.githubusercontent.com/u/80410025?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/renner0e",
+    "html_url": "https://github.com/renner0e",
+    "followers_url": "https://api.github.com/users/renner0e/followers",
+    "following_url": "https://api.github.com/users/renner0e/following{/other_user}",
+    "gists_url": "https://api.github.com/users/renner0e/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/renner0e/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/renner0e/subscriptions",
+    "organizations_url": "https://api.github.com/users/renner0e/orgs",
+    "repos_url": "https://api.github.com/users/renner0e/repos",
+    "events_url": "https://api.github.com/users/renner0e/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/renner0e/received_events",
     "type": "User",
     "user_view_type": "public",
     "site_admin": false,
