@@ -235,6 +235,7 @@ select:focus {
 }
 
 #image-builder-result {
+  position: relative;
   width: 100%;
   background: #262626;
   border-radius: 15px;
@@ -1912,6 +1913,63 @@ d-topics-list > iframe {
     margin-top: 100px;
   }
 }
+
+.gamemode-warning-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  z-index: 100;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.gamemode-warning-overlay.hidden-fade {
+  pointer-events: none;
+  max-height: 100%;
+  overflow: visible;
+}
+
+.gamemode-warning-overlay.shown-fade {
+  max-height: 100%;
+  overflow: visible;
+}
+
+.gamemode-warning-content {
+  text-align: center;
+  max-width: 500px;
+  padding: 30px;
+  margin-top: 80px;
+}
+
+.gamemode-warning-content .picker-message {
+  max-width: 500px;
+  font-size: 18px;
+  line-height: 22px;
+  font-style: normal;
+}
+
+.gamemode-warning-checkbox {
+  display: block;
+  margin-top: 20px;
+  color: #ff8484;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.gamemode-warning-checkbox input[type="checkbox"] {
+  margin-right: 8px;
+  cursor: pointer;
+  accent-color: #ff8484;
+}
+
 .button-download {
     margin-left: 20px;
     padding: 5px!important;

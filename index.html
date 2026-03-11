@@ -5295,7 +5295,7 @@
 				}
 			}
 		</style>
-		<link rel='stylesheet' id='style-css' href='content/themes/betheme-child/style268.css' type='text/css' media='all' />
+		<link rel='stylesheet' id='style-css' href='content/themes/betheme-child/style273.css' type='text/css' media='all' />
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" id="jquery-core-js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.5.2/jquery-migrate.min.js" id="jquery-migrate-js"></script>
 		<link rel="canonical" href="https://bazzite.gg/" />
@@ -7075,10 +7075,7 @@ https://www.forbes.com/sites/jasonevangelho/2024/12/03/5-reasons-you-should-run-
 																		<div class="vm-gamemode fade-transition hidden-fade">
 																			<span class="picker-message red">When using Steam Gaming Mode in a virtual machine, you <strong>must</strong> pass-through a GPU.</span>
 																		</div>
-																		<div class="gamemode-beta fade-transition hidden-fade">
-																			<span class="picker-message red">Steam Gaming Mode support is available for your hardware in beta, but <a href="https://docs.bazzite.gg/Handheld_and_HTPC_edition/quirks/#nvidia-gpu-exclusive-issues-with-steam-gaming-mode" target="_blank">multiple known issues exist in these builds</a>. Please note that the majority of bugs cannot be fixed except by your GPU manufacturer.</span>
-																		</div>
-																		<div class="gamemode-noigpu fade-transition hidden-fade">
+																																				<div class="gamemode-noigpu fade-transition hidden-fade">
 																			<span class="picker-message red">Some devices with two AMD GPUs (iGPU and dGPU) cause gamescope to be unable to detect your display resulting in a black screen. If you are affected, use an image without Steam Gaming Mode or disable your iGPU. <a href="https://github.com/ValveSoftware/gamescope/issues/1469" target="_blank">See this issue</a> for more information.</span>
 																		</div>
 																	</form>
@@ -7229,6 +7226,16 @@ https://www.forbes.com/sites/jasonevangelho/2024/12/03/5-reasons-you-should-run-
 													</div>
 												</div>
 												<div id="image-builder-result" class="fade-transition hidden-fade">
+												<div id="nvidia-gamemode-warning" class="gamemode-warning-overlay fade-transition hidden-fade">
+													<div class="gamemode-warning-content">
+														<span class="picker-message red">
+															<strong><i class="fa-solid fa-triangle-exclamation"></i> WARNING: Nvidia & Intel GPU support in Steam Gaming Mode and on HTPCs is available as a beta with known issues that cannot be fixed by the Bazzite team.<br><br>Unless you're a Linux driver developer, or looking for a known-broken toy to play with, we recommend using one of our Desktop images without Steam Gaming Mode.<br><br>You can view a list of current known issues <a href="https://docs.bazzite.gg/Handheld_and_HTPC_edition/quirks/#nvidia-gpu-exclusive-issues-with-steam-gaming-mode" target="_blank">here</a>.
+														</span>
+														<label class="gamemode-warning-checkbox">
+															<input type="checkbox" id="nvidia-gamemode-ack"> I understand things are broken and wish to proceed
+														</label>
+													</div>
+												</div>
 													<div class="tab">
 														<button class="tablinks" onclick="openResult(event, 'New')" id="defaultOpen"><span style="text-align:center;width:100%;">New Users</span></button>
 														<button class="tablinks" onclick="openResult(event, 'Bazzite')"><span style="text-align:center;width:100%;">Existing Bazzite Users</span></button>
@@ -7434,7 +7441,7 @@ https://www.forbes.com/sites/jasonevangelho/2024/12/03/5-reasons-you-should-run-
 		<script type="text/javascript" src="content/themes/betheme/js/scripts2.js" id="mfn-scripts-js"></script>
 		<script type="text/javascript" src="content/themes/betheme/js/plugins/imagesloaded.min.js%3Fver=27.3.5" id="mfn-imagesloaded-js"></script>
 		<script type="text/javascript" src="content/themes/betheme/js/plugins/slick.min.js?ver=27.3.5" id="mfn-slick-js"></script>
-		<script type="text/javascript" src="content/themes/betheme-child/script119.js" id="script-js" defer></script>
+		<script type="text/javascript" src="content/themes/betheme-child/script121.js" id="script-js" defer></script>
 		<script type="text/javascript" src="content/themes/betheme/assets/lottie/lottie-player.js" id="mfn-lottie-player-js" defer></script>
 		<script type="text/javascript" src="content/themes/betheme-child/lottie.js" id="lottie" defer></script>
 		<script type="text/javascript" src="https:///universal-blue.discourse.group/javascripts/embed-topics.js" id="discourse-js" defer></script>

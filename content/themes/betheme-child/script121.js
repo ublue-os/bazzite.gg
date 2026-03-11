@@ -446,7 +446,6 @@ jQuery(document).ready(function() {
     jQuery('#image-builder .gpu, #image-builder .gamemode').addClass('hidden-fade').removeClass('shown-fade');
     jQuery('#image-builder .no-gamemode').addClass('hidden-fade').removeClass('shown-fade');
     jQuery('#image-builder .vm-gamemode').addClass('hidden-fade').removeClass('shown-fade');
-    jQuery('#image-builder .gamemode-beta').addClass('hidden-fade').removeClass('shown-fade');
     jQuery('#image-builder .ventoy-workaround').addClass('hidden-fade').removeClass('shown-fade');
     jQuery('#image-builder .vm-gamemode').addClass('hidden-fade').removeClass('shown-fade');
 
@@ -517,12 +516,6 @@ jQuery(document).ready(function() {
     } else if (!apuHardware.includes(hardware)) {
       jQuery('#image-builder .gamemode').addClass('hidden-fade').removeClass('shown-fade');
       jQuery('#image-builder .no-gamemode').addClass('hidden-fade').removeClass('shown-fade');
-    }
-
-    if ((gamemodeBetaHardware.includes(gpuVendor) || gamemodeBetaHardware.includes(hardware)) && desktopHardware.includes(hardware)) {
-      jQuery('#image-builder .gamemode-beta').removeClass('hidden-fade').addClass('shown-fade');
-    } else {
-      jQuery('#image-builder .gamemode-beta').addClass('hidden-fade').removeClass('shown-fade');
     }
 
     if(gamemodeHardware.includes(hardware)) {
@@ -645,6 +638,35 @@ jQuery(document).ready(function() {
       }
     } else {
       jQuery('#image-builder-result').addClass('hidden-fade').removeClass('shown-fade');
+    }
+
+    // Nvidia/Intel gamemode beta overlay
+    jQuery('#nvidia-gamemode-ack').prop('checked', false);
+    var gamemodeBetaActive = (gamemodeBetaHardware.includes(gpuVendor) || gamemodeBetaHardware.includes(hardware))
+      && desktopHardware.includes(hardware) && steamGameMode === 'yes';
+    var warningOverlay = jQuery('#nvidia-gamemode-warning');
+
+    if (gamemodeBetaActive && jQuery('#image-builder-result').hasClass('shown-fade')) {
+      warningOverlay.removeClass('hidden-fade').addClass('shown-fade');
+      jQuery('#image-builder-result a.button-liveiso, #image-builder-result a.button-download, #image-builder-result a.button-torrent')
+        .attr('tabindex', '-1');
+    } else {
+      warningOverlay.addClass('hidden-fade').removeClass('shown-fade');
+      jQuery('#image-builder-result a.button-liveiso, #image-builder-result a.button-download, #image-builder-result a.button-torrent')
+        .attr('tabindex', '0');
+    }
+  });
+
+  jQuery('#nvidia-gamemode-ack').on('change', function () {
+    var overlay = jQuery('#nvidia-gamemode-warning');
+    if (jQuery(this).is(':checked')) {
+      overlay.addClass('hidden-fade').removeClass('shown-fade');
+      jQuery('#image-builder-result a.button-liveiso, #image-builder-result a.button-download, #image-builder-result a.button-torrent')
+        .attr('tabindex', '0');
+    } else {
+      overlay.removeClass('hidden-fade').addClass('shown-fade');
+      jQuery('#image-builder-result a.button-liveiso, #image-builder-result a.button-download, #image-builder-result a.button-torrent')
+        .attr('tabindex', '-1');
     }
   });
 });
