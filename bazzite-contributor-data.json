@@ -151,7 +151,7 @@
     "type": "Bot",
     "user_view_type": "public",
     "site_admin": false,
-    "contributions": 108
+    "contributions": 109
   },
   {
     "login": "xXJSONDeruloXx",
@@ -616,6 +616,28 @@
     "contributions": 10
   },
   {
+    "login": "Lumaeris",
+    "id": 10499845,
+    "node_id": "MDQ6VXNlcjEwNDk5ODQ1",
+    "avatar_url": "https://avatars.githubusercontent.com/u/10499845?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/Lumaeris",
+    "html_url": "https://github.com/Lumaeris",
+    "followers_url": "https://api.github.com/users/Lumaeris/followers",
+    "following_url": "https://api.github.com/users/Lumaeris/following{/other_user}",
+    "gists_url": "https://api.github.com/users/Lumaeris/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/Lumaeris/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/Lumaeris/subscriptions",
+    "organizations_url": "https://api.github.com/users/Lumaeris/orgs",
+    "repos_url": "https://api.github.com/users/Lumaeris/repos",
+    "events_url": "https://api.github.com/users/Lumaeris/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/Lumaeris/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false,
+    "contributions": 10
+  },
+  {
     "login": "dnkmmr69420",
     "id": 104856296,
     "node_id": "U_kgDOBj_66A",
@@ -636,27 +658,5 @@
     "user_view_type": "public",
     "site_admin": false,
     "contributions": 10
-  },
-  {
-    "login": "Lumaeris",
-    "id": 10499845,
-    "node_id": "MDQ6VXNlcjEwNDk5ODQ1",
-    "avatar_url": "https://avatars.githubusercontent.com/u/10499845?v=4",
-    "gravatar_id": "",
-    "url": "https://api.github.com/users/Lumaeris",
-    "html_url": "https://github.com/Lumaeris",
-    "followers_url": "https://api.github.com/users/Lumaeris/followers",
-    "following_url": "https://api.github.com/users/Lumaeris/following{/other_user}",
-    "gists_url": "https://api.github.com/users/Lumaeris/gists{/gist_id}",
-    "starred_url": "https://api.github.com/users/Lumaeris/starred{/owner}{/repo}",
-    "subscriptions_url": "https://api.github.com/users/Lumaeris/subscriptions",
-    "organizations_url": "https://api.github.com/users/Lumaeris/orgs",
-    "repos_url": "https://api.github.com/users/Lumaeris/repos",
-    "events_url": "https://api.github.com/users/Lumaeris/events{/privacy}",
-    "received_events_url": "https://api.github.com/users/Lumaeris/received_events",
-    "type": "User",
-    "user_view_type": "public",
-    "site_admin": false,
-    "contributions": 9
   }
 ]
