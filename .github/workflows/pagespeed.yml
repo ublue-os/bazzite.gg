@@ -8,7 +8,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: bazzite-org/metrics@master
+      - uses: bazzite-org/metrics@3cc58401c134b85f23ac0668dd7e854a6f6f429b # master
         with:
           filename: metrics.plugin.pagespeed.svg
           token: NOT_NEEDED
