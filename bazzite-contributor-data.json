@@ -19,7 +19,7 @@
     "type": "User",
     "user_view_type": "public",
     "site_admin": false,
-    "contributions": 5232
+    "contributions": 5241
   },
   {
     "login": "EyeCantCU",
@@ -308,6 +308,28 @@
     "contributions": 34
   },
   {
+    "login": "dylanmtaylor",
+    "id": 277927,
+    "node_id": "MDQ6VXNlcjI3NzkyNw==",
+    "avatar_url": "https://avatars.githubusercontent.com/u/277927?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/dylanmtaylor",
+    "html_url": "https://github.com/dylanmtaylor",
+    "followers_url": "https://api.github.com/users/dylanmtaylor/followers",
+    "following_url": "https://api.github.com/users/dylanmtaylor/following{/other_user}",
+    "gists_url": "https://api.github.com/users/dylanmtaylor/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/dylanmtaylor/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/dylanmtaylor/subscriptions",
+    "organizations_url": "https://api.github.com/users/dylanmtaylor/orgs",
+    "repos_url": "https://api.github.com/users/dylanmtaylor/repos",
+    "events_url": "https://api.github.com/users/dylanmtaylor/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/dylanmtaylor/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false,
+    "contributions": 33
+  },
+  {
     "login": "stellaberrant",
     "id": 104581805,
     "node_id": "U_kgDOBjvKrQ",
@@ -328,28 +350,6 @@
     "user_view_type": "public",
     "site_admin": false,
     "contributions": 33
-  },
-  {
-    "login": "dylanmtaylor",
-    "id": 277927,
-    "node_id": "MDQ6VXNlcjI3NzkyNw==",
-    "avatar_url": "https://avatars.githubusercontent.com/u/277927?v=4",
-    "gravatar_id": "",
-    "url": "https://api.github.com/users/dylanmtaylor",
-    "html_url": "https://github.com/dylanmtaylor",
-    "followers_url": "https://api.github.com/users/dylanmtaylor/followers",
-    "following_url": "https://api.github.com/users/dylanmtaylor/following{/other_user}",
-    "gists_url": "https://api.github.com/users/dylanmtaylor/gists{/gist_id}",
-    "starred_url": "https://api.github.com/users/dylanmtaylor/starred{/owner}{/repo}",
-    "subscriptions_url": "https://api.github.com/users/dylanmtaylor/subscriptions",
-    "organizations_url": "https://api.github.com/users/dylanmtaylor/orgs",
-    "repos_url": "https://api.github.com/users/dylanmtaylor/repos",
-    "events_url": "https://api.github.com/users/dylanmtaylor/events{/privacy}",
-    "received_events_url": "https://api.github.com/users/dylanmtaylor/received_events",
-    "type": "User",
-    "user_view_type": "public",
-    "site_admin": false,
-    "contributions": 32
   },
   {
     "login": "castrojo",
