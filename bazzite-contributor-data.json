@@ -19,7 +19,7 @@
     "type": "User",
     "user_view_type": "public",
     "site_admin": false,
-    "contributions": 5263
+    "contributions": 5275
   },
   {
     "login": "EyeCantCU",
@@ -437,7 +437,7 @@
     "type": "User",
     "user_view_type": "public",
     "site_admin": false,
-    "contributions": 28
+    "contributions": 29
   },
   {
     "login": "fiftydinar",
@@ -550,6 +550,28 @@
     "contributions": 18
   },
   {
+    "login": "ubot-7274[bot]",
+    "id": 217212047,
+    "node_id": "BOT_kgDODPJkjw",
+    "avatar_url": "https://avatars.githubusercontent.com/u/120078124?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/ubot-7274%5Bbot%5D",
+    "html_url": "https://github.com/apps/ubot-7274",
+    "followers_url": "https://api.github.com/users/ubot-7274%5Bbot%5D/followers",
+    "following_url": "https://api.github.com/users/ubot-7274%5Bbot%5D/following{/other_user}",
+    "gists_url": "https://api.github.com/users/ubot-7274%5Bbot%5D/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/ubot-7274%5Bbot%5D/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/ubot-7274%5Bbot%5D/subscriptions",
+    "organizations_url": "https://api.github.com/users/ubot-7274%5Bbot%5D/orgs",
+    "repos_url": "https://api.github.com/users/ubot-7274%5Bbot%5D/repos",
+    "events_url": "https://api.github.com/users/ubot-7274%5Bbot%5D/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/ubot-7274%5Bbot%5D/received_events",
+    "type": "Bot",
+    "user_view_type": "public",
+    "site_admin": false,
+    "contributions": 12
+  },
+  {
     "login": "SuperRiderTH",
     "id": 5368844,
     "node_id": "MDQ6VXNlcjUzNjg4NDQ=",
@@ -632,28 +654,6 @@
     "repos_url": "https://api.github.com/users/trbocode/repos",
     "events_url": "https://api.github.com/users/trbocode/events{/privacy}",
     "received_events_url": "https://api.github.com/users/trbocode/received_events",
-    "type": "User",
-    "user_view_type": "public",
-    "site_admin": false,
-    "contributions": 11
-  },
-  {
-    "login": "wolfyreload",
-    "id": 5320719,
-    "node_id": "MDQ6VXNlcjUzMjA3MTk=",
-    "avatar_url": "https://avatars.githubusercontent.com/u/5320719?v=4",
-    "gravatar_id": "",
-    "url": "https://api.github.com/users/wolfyreload",
-    "html_url": "https://github.com/wolfyreload",
-    "followers_url": "https://api.github.com/users/wolfyreload/followers",
-    "following_url": "https://api.github.com/users/wolfyreload/following{/other_user}",
-    "gists_url": "https://api.github.com/users/wolfyreload/gists{/gist_id}",
-    "starred_url": "https://api.github.com/users/wolfyreload/starred{/owner}{/repo}",
-    "subscriptions_url": "https://api.github.com/users/wolfyreload/subscriptions",
-    "organizations_url": "https://api.github.com/users/wolfyreload/orgs",
-    "repos_url": "https://api.github.com/users/wolfyreload/repos",
-    "events_url": "https://api.github.com/users/wolfyreload/events{/privacy}",
-    "received_events_url": "https://api.github.com/users/wolfyreload/received_events",
     "type": "User",
     "user_view_type": "public",
     "site_admin": false,
