@@ -66,7 +66,7 @@
   "releases_url": "https://api.github.com/repos/ublue-os/bazzite/releases{/id}",
   "deployments_url": "https://api.github.com/repos/ublue-os/bazzite/deployments",
   "created_at": "2023-02-09T19:05:47Z",
-  "updated_at": "2026-06-11T21:51:18Z",
+  "updated_at": "2026-06-12T20:28:37Z",
   "pushed_at": "2026-06-10T19:06:39Z",
   "git_url": "git://github.com/ublue-os/bazzite.git",
   "ssh_url": "git@github.com:ublue-os/bazzite.git",
@@ -74,8 +74,8 @@
   "svn_url": "https://github.com/ublue-os/bazzite",
   "homepage": "https://bazzite.gg",
   "size": 265188,
-  "stargazers_count": 8579,
-  "watchers_count": 8579,
+  "stargazers_count": 8585,
+  "watchers_count": 8585,
   "language": "Just",
   "has_issues": true,
   "has_projects": true,
@@ -87,7 +87,7 @@
   "mirror_url": null,
   "archived": false,
   "disabled": false,
-  "open_issues_count": 1104,
+  "open_issues_count": 1105,
   "license": {
     "key": "apache-2.0",
     "name": "Apache License 2.0",
@@ -118,8 +118,8 @@
   ],
   "visibility": "public",
   "forks": 921,
-  "open_issues": 1104,
-  "watchers": 8579,
+  "open_issues": 1105,
+  "watchers": 8585,
   "default_branch": "main",
   "temp_clone_token": null,
   "custom_properties": {
@@ -147,5 +147,5 @@
     "site_admin": false
   },
   "network_count": 921,
-  "subscribers_count": 59
+  "subscribers_count": 61
 }
