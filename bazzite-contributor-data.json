@@ -19,7 +19,7 @@
     "type": "User",
     "user_view_type": "public",
     "site_admin": false,
-    "contributions": 5287
+    "contributions": 5288
   },
   {
     "login": "EyeCantCU",
@@ -286,6 +286,28 @@
     "contributions": 36
   },
   {
+    "login": "ubot-7274[bot]",
+    "id": 217212047,
+    "node_id": "BOT_kgDODPJkjw",
+    "avatar_url": "https://avatars.githubusercontent.com/u/120078124?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/ubot-7274%5Bbot%5D",
+    "html_url": "https://github.com/apps/ubot-7274",
+    "followers_url": "https://api.github.com/users/ubot-7274%5Bbot%5D/followers",
+    "following_url": "https://api.github.com/users/ubot-7274%5Bbot%5D/following{/other_user}",
+    "gists_url": "https://api.github.com/users/ubot-7274%5Bbot%5D/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/ubot-7274%5Bbot%5D/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/ubot-7274%5Bbot%5D/subscriptions",
+    "organizations_url": "https://api.github.com/users/ubot-7274%5Bbot%5D/orgs",
+    "repos_url": "https://api.github.com/users/ubot-7274%5Bbot%5D/repos",
+    "events_url": "https://api.github.com/users/ubot-7274%5Bbot%5D/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/ubot-7274%5Bbot%5D/received_events",
+    "type": "Bot",
+    "user_view_type": "public",
+    "site_admin": false,
+    "contributions": 35
+  },
+  {
     "login": "kressb-gitlab",
     "id": 201506523,
     "node_id": "U_kgDODAK-2w",
@@ -391,28 +413,6 @@
     "events_url": "https://api.github.com/users/castrojo/events{/privacy}",
     "received_events_url": "https://api.github.com/users/castrojo/received_events",
     "type": "User",
-    "user_view_type": "public",
-    "site_admin": false,
-    "contributions": 32
-  },
-  {
-    "login": "ubot-7274[bot]",
-    "id": 217212047,
-    "node_id": "BOT_kgDODPJkjw",
-    "avatar_url": "https://avatars.githubusercontent.com/u/120078124?v=4",
-    "gravatar_id": "",
-    "url": "https://api.github.com/users/ubot-7274%5Bbot%5D",
-    "html_url": "https://github.com/apps/ubot-7274",
-    "followers_url": "https://api.github.com/users/ubot-7274%5Bbot%5D/followers",
-    "following_url": "https://api.github.com/users/ubot-7274%5Bbot%5D/following{/other_user}",
-    "gists_url": "https://api.github.com/users/ubot-7274%5Bbot%5D/gists{/gist_id}",
-    "starred_url": "https://api.github.com/users/ubot-7274%5Bbot%5D/starred{/owner}{/repo}",
-    "subscriptions_url": "https://api.github.com/users/ubot-7274%5Bbot%5D/subscriptions",
-    "organizations_url": "https://api.github.com/users/ubot-7274%5Bbot%5D/orgs",
-    "repos_url": "https://api.github.com/users/ubot-7274%5Bbot%5D/repos",
-    "events_url": "https://api.github.com/users/ubot-7274%5Bbot%5D/events{/privacy}",
-    "received_events_url": "https://api.github.com/users/ubot-7274%5Bbot%5D/received_events",
-    "type": "Bot",
     "user_view_type": "public",
     "site_admin": false,
     "contributions": 32
