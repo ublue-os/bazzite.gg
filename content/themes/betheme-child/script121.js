@@ -435,6 +435,13 @@ jQuery(document).ready(function() {
   }
 
   jQuery('#image-builder #desktopEnvironment, #image-builder #selectedHardware, #image-builder #gpuVendor, #image-builder #steamGameMode').on('change', function() {
+    // ARM handhelds aren't supported by Bazzite, send these users to Armada instead
+    if (this.id === 'selectedHardware' && jQuery(this).val() === 'arm') {
+      this.selectedIndex = 0;
+      window.open('https://armadaos.dev/', '_blank');
+      return;
+    }
+
     jQuery(this).parent('.select-wrapper').removeClass('glow-effect');
     var desktopEnvironment = jQuery('#desktopEnvironment').parent('div').parent('div').hasClass('hidden-fade') ? '' : jQuery('#desktopEnvironment').val();
     var hardware = jQuery('#selectedHardware').parent('div').parent('div').hasClass('hidden-fade') ? '' : jQuery('#selectedHardware').val();
