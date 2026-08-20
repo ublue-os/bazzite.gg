@@ -438,7 +438,7 @@ jQuery(document).ready(function() {
     // ARM handhelds aren't supported by Bazzite, send these users to Armada instead
     if (this.id === 'selectedHardware' && jQuery(this).val() === 'arm') {
       this.selectedIndex = 0;
-      window.open('https://armadaos.dev/', '_blank');
+      window.location.href = 'https://armadaos.dev/';
       return;
     }
 
