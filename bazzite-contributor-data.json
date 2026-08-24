@@ -19,7 +19,7 @@
     "type": "User",
     "user_view_type": "public",
     "site_admin": false,
-    "contributions": 5452
+    "contributions": 5457
   },
   {
     "login": "EyeCantCU",
@@ -173,7 +173,7 @@
     "type": "Bot",
     "user_view_type": "public",
     "site_admin": false,
-    "contributions": 97
+    "contributions": 98
   },
   {
     "login": "Lumaeris",
@@ -305,7 +305,7 @@
     "type": "User",
     "user_view_type": "public",
     "site_admin": false,
-    "contributions": 40
+    "contributions": 42
   },
   {
     "login": "EPOCHvoyager",
@@ -327,7 +327,7 @@
     "type": "User",
     "user_view_type": "public",
     "site_admin": false,
-    "contributions": 39
+    "contributions": 40
   },
   {
     "login": "github-actions[bot]",
@@ -396,6 +396,28 @@
     "contributions": 35
   },
   {
+    "login": "renner0e",
+    "id": 80410025,
+    "node_id": "MDQ6VXNlcjgwNDEwMDI1",
+    "avatar_url": "https://avatars.githubusercontent.com/u/80410025?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/renner0e",
+    "html_url": "https://github.com/renner0e",
+    "followers_url": "https://api.github.com/users/renner0e/followers",
+    "following_url": "https://api.github.com/users/renner0e/following{/other_user}",
+    "gists_url": "https://api.github.com/users/renner0e/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/renner0e/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/renner0e/subscriptions",
+    "organizations_url": "https://api.github.com/users/renner0e/orgs",
+    "repos_url": "https://api.github.com/users/renner0e/repos",
+    "events_url": "https://api.github.com/users/renner0e/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/renner0e/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false,
+    "contributions": 34
+  },
+  {
     "login": "dylanmtaylor",
     "id": 277927,
     "node_id": "MDQ6VXNlcjI3NzkyNw==",
@@ -438,28 +460,6 @@
     "user_view_type": "public",
     "site_admin": false,
     "contributions": 32
-  },
-  {
-    "login": "renner0e",
-    "id": 80410025,
-    "node_id": "MDQ6VXNlcjgwNDEwMDI1",
-    "avatar_url": "https://avatars.githubusercontent.com/u/80410025?v=4",
-    "gravatar_id": "",
-    "url": "https://api.github.com/users/renner0e",
-    "html_url": "https://github.com/renner0e",
-    "followers_url": "https://api.github.com/users/renner0e/followers",
-    "following_url": "https://api.github.com/users/renner0e/following{/other_user}",
-    "gists_url": "https://api.github.com/users/renner0e/gists{/gist_id}",
-    "starred_url": "https://api.github.com/users/renner0e/starred{/owner}{/repo}",
-    "subscriptions_url": "https://api.github.com/users/renner0e/subscriptions",
-    "organizations_url": "https://api.github.com/users/renner0e/orgs",
-    "repos_url": "https://api.github.com/users/renner0e/repos",
-    "events_url": "https://api.github.com/users/renner0e/events{/privacy}",
-    "received_events_url": "https://api.github.com/users/renner0e/received_events",
-    "type": "User",
-    "user_view_type": "public",
-    "site_admin": false,
-    "contributions": 31
   },
   {
     "login": "m2Giles",
