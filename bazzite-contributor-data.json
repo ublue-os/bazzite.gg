@@ -19,7 +19,7 @@
     "type": "User",
     "user_view_type": "public",
     "site_admin": false,
-    "contributions": 5457
+    "contributions": 5469
   },
   {
     "login": "EyeCantCU",
@@ -305,7 +305,7 @@
     "type": "User",
     "user_view_type": "public",
     "site_admin": false,
-    "contributions": 42
+    "contributions": 43
   },
   {
     "login": "EPOCHvoyager",
@@ -550,28 +550,6 @@
     "contributions": 19
   },
   {
-    "login": "bsherman",
-    "id": 60557,
-    "node_id": "MDQ6VXNlcjYwNTU3",
-    "avatar_url": "https://avatars.githubusercontent.com/u/60557?v=4",
-    "gravatar_id": "",
-    "url": "https://api.github.com/users/bsherman",
-    "html_url": "https://github.com/bsherman",
-    "followers_url": "https://api.github.com/users/bsherman/followers",
-    "following_url": "https://api.github.com/users/bsherman/following{/other_user}",
-    "gists_url": "https://api.github.com/users/bsherman/gists{/gist_id}",
-    "starred_url": "https://api.github.com/users/bsherman/starred{/owner}{/repo}",
-    "subscriptions_url": "https://api.github.com/users/bsherman/subscriptions",
-    "organizations_url": "https://api.github.com/users/bsherman/orgs",
-    "repos_url": "https://api.github.com/users/bsherman/repos",
-    "events_url": "https://api.github.com/users/bsherman/events{/privacy}",
-    "received_events_url": "https://api.github.com/users/bsherman/received_events",
-    "type": "User",
-    "user_view_type": "public",
-    "site_admin": false,
-    "contributions": 18
-  },
-  {
     "login": "andy10115",
     "id": 162940559,
     "node_id": "U_kgDOCbZGjw",
@@ -588,6 +566,28 @@
     "repos_url": "https://api.github.com/users/andy10115/repos",
     "events_url": "https://api.github.com/users/andy10115/events{/privacy}",
     "received_events_url": "https://api.github.com/users/andy10115/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false,
+    "contributions": 19
+  },
+  {
+    "login": "bsherman",
+    "id": 60557,
+    "node_id": "MDQ6VXNlcjYwNTU3",
+    "avatar_url": "https://avatars.githubusercontent.com/u/60557?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/bsherman",
+    "html_url": "https://github.com/bsherman",
+    "followers_url": "https://api.github.com/users/bsherman/followers",
+    "following_url": "https://api.github.com/users/bsherman/following{/other_user}",
+    "gists_url": "https://api.github.com/users/bsherman/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/bsherman/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/bsherman/subscriptions",
+    "organizations_url": "https://api.github.com/users/bsherman/orgs",
+    "repos_url": "https://api.github.com/users/bsherman/repos",
+    "events_url": "https://api.github.com/users/bsherman/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/bsherman/received_events",
     "type": "User",
     "user_view_type": "public",
     "site_admin": false,
