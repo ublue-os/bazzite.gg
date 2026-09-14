@@ -14,6 +14,7 @@ jobs:
           curl --fail --location --retry 3 --user-agent "Mozilla/5.0" \
             "https://universal-blue.discourse.group/embed/topics?discourse_embed_id=de-8yypuu3ls&per_page=5&tags=bazzite-news&template=complete" \
             --output news/index.html
+          sed -i -E 's#(href|src|srcset)=(['\''"])/#\1=\2https://universal-blue.discourse.group/#g' news/index.html
         working-directory: ${{ github.workspace }}
 
       - name: Write Discourse News to Repository
