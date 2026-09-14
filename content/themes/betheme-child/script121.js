@@ -403,7 +403,7 @@ jQuery(document).ready(function() {
   const valveHardware = ['steamdeck'];
   const noGamemodeHardware = ['nvidia', 'old-intel', 'surface', 'old-amd'];
   const ventoyWorkaroundHardware = ['surface'];
-  const gamemodeBetaHardware = ['nvidia-open', 'intel'];
+  const gamemodeBetaHardware = ['nvidia-open'];
   const noProprietaryNvidiaHardware = ['surface'];
   const asusHardware = ['asus'];
 
