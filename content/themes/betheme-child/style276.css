@@ -516,7 +516,7 @@ select:focus {
   }
 
   #image-builder-result .picker-breadcrumb button {
-    padding: 5px 1px;
+    padding: 5px 4px;
     white-space: nowrap;
   }
 
@@ -529,7 +529,7 @@ select:focus {
   }
 
   #image-builder-result .picker-breadcrumb-answer {
-    font-size: clamp(8px, 2.5vw, 10px);
+    font-size: 13px;
   }
 }
 
