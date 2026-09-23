@@ -227,7 +227,23 @@ jQuery(document).ready(function() {
   jQuery(document).on('click', '.button-to-download', function (event) {
       event.preventDefault();
 
-      var scrollLocation = jQuery(jQuery.attr(this, 'href')).offset().top - jQuery('#mfn-header-template').outerHeight();
+      var href = jQuery.attr(this, 'href');
+      var target = jQuery(href);
+
+      // If the requested anchor is currently hidden (e.g. #image-builder after
+      // a selection is complete), fall back to whichever picker panel is
+      // actually visible so the scroll offset is valid.
+      if (!target.length || !target.is(':visible')) {
+        target = jQuery('#image-builder-result').is(':visible')
+          ? jQuery('#image-builder-result')
+          : jQuery('#image-builder');
+      }
+
+      if (!target.length) {
+        return;
+      }
+
+      var scrollLocation = target.offset().top - jQuery('#mfn-header-template').outerHeight();
 
       jQuery('html, body').animate({
           scrollTop: scrollLocation
@@ -537,6 +553,8 @@ jQuery(document).ready(function() {
     jQuery('#nvidia-gpu-option span').text(
       pickerState.device === 'htpc' ? 'Nvidia GTX 1660 or RTX series' : 'Nvidia'
     );
+
+    jQuery('.handheld-only').toggle(pickerState.device === 'handheld');
 
     if (!pickerState.device) {
       showStep('#image-builder .device-choice');

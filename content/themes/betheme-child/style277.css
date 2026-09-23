@@ -680,6 +680,39 @@ select:focus {
   text-decoration: underline;
 }
 
+.armada-callout {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.armada-callout hr {
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #444;
+}
+
+.armada-callout .button {
+  margin-top: 12px;
+}
+
+.armada-button {
+  color: #000!important;
+  background: #fff!important;
+}
+
+.armada-button:hover,
+.armada-button:focus-visible {
+  background: #d9d9d9!important;
+}
+
+.armada-logo {
+  display: inline-block;
+  height: 1em!important;
+  width: auto;
+  margin: 0 2px;
+  vertical-align: -0.15em;
+}
+
 .code,
 code {
   padding: 5px;
