@@ -468,13 +468,17 @@ jQuery(document).ready(function() {
     var usesGamingMode = pickerState.device === 'htpc' || pickerState.device === 'handheld';
     var imagename = usesGamingMode ? 'bazzite-deck' : 'bazzite';
 
+    if (pickerState.device === 'desktop' && pickerState.desktopEnvironment === 'gnome') {
+      imagename += '-gnome';
+    }
+
     if (pickerState.device === 'desktop' && pickerState.gpu === 'nvidia') {
       imagename += pickerState.nvidiaDriver === 'proprietary' ? '-nvidia' : '-nvidia-open';
     } else if (pickerState.device === 'htpc' && pickerState.gpu === 'nvidia') {
       imagename += '-nvidia';
     }
 
-    if (pickerState.desktopEnvironment === 'gnome') {
+    if (pickerState.device !== 'desktop' && pickerState.desktopEnvironment === 'gnome') {
       imagename += '-gnome';
     }
 
