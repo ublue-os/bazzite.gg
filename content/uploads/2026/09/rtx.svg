@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="243.90234pt"
+   height="93.636719pt"
+   viewBox="0 0 243.90234 93.636718"
+   version="1.1"
+   id="svg19"
+   sodipodi:docname="NVIDIA-RTX-Logo.svg"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs19" />
+  <sodipodi:namedview
+     id="namedview19"
+     pagecolor="#000000"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="pt"
+     inkscape:zoom="1.8619713"
+     inkscape:cx="104.99625"
+     inkscape:cy="45.919075"
+     inkscape:window-width="3440"
+     inkscape:window-height="1371"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="surface1" />
+  <g
+     id="surface1"
+     transform="translate(-326.15234,-78.9375)">
+    <path
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       d="m 344.08984,117.89063 h 30.50782 c 1.29687,0 2.41015,-0.45704 3.32421,-1.3711 0.91797,-0.91406 1.375,-2.01953 1.375,-3.3125 v -12.71875 c 0,-1.292967 -0.45703,-2.421874 -1.375,-3.378905 -0.91406,-0.960937 -2.02734,-1.4375 -3.32421,-1.4375 h -30.50782 z m -17.9375,54.68359 V 79.070313 h 56.03125 c 4.32813,0 8.01172,1.527343 11.03516,4.585937 3.03125,3.054688 4.55078,6.75 4.55078,11.078125 v 24.093755 c 0,4.32812 -1.51953,8.02343 -4.55078,11.07812 -3.03516,3.05469 -6.71875,4.58594 -11.04688,4.58594 h -1.13671 l 22.89062,38.08203 h -19.54297 l -23.125,-38.08203 h -17.16797 v 38.08203"
+       id="path11" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       d="M 410.82031,95.402344 V 79.070313 h 71.75391 V 95.402344 H 455.80078 V 172.57422 H 437.59375 V 95.402344"
+       id="path12" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       d="m 487.25781,172.57422 30.98828,-47.1875 -29.17968,-46.44922 h 21.95312 l 18.47266,29.51563 18.80859,-29.51563 h 20.14844 l -29.51953,44.44141 31.125,49.19531 h -21.88672 l -20.34766,-31.92578 -20.54687,31.92578"
+       id="path13" />
+  </g>
+</svg>

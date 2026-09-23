@@ -481,6 +481,42 @@ jQuery(document).ready(function() {
     return imagename;
   }
 
+  function updatePickerBreadcrumb() {
+    var labels = {
+      device: {
+        desktop: 'Desktop',
+        htpc: 'HTPC',
+        handheld: 'Handheld'
+      },
+      gpu: {
+        'amd-intel': 'AMD/Intel',
+        nvidia: 'Nvidia'
+      },
+      nvidiaDriver: {
+        proprietary: 'GTX',
+        open: 'RTX'
+      },
+      desktopEnvironment: {
+        kde: 'KDE',
+        gnome: 'GNOME'
+      }
+    };
+    var answers = {
+      device: labels.device[pickerState.device] || '',
+      gpu: labels.gpu[pickerState.gpu] || '',
+      nvidia: pickerState.device === 'desktop' && pickerState.gpu === 'nvidia' && pickerState.nvidiaDriver
+        ? labels.nvidiaDriver[pickerState.nvidiaDriver]
+        : '',
+      desktopEnvironment: labels.desktopEnvironment[pickerState.desktopEnvironment] || ''
+    };
+
+    jQuery.each(answers, function(step, answer) {
+      var breadcrumb = jQuery('[data-picker-breadcrumb="' + step + '"]');
+      breadcrumb.toggle(Boolean(answer));
+      breadcrumb.find('.picker-breadcrumb-answer').text(answer);
+    });
+  }
+
   function updatePicker() {
     var requiresGpu = pickerState.device === 'desktop' || pickerState.device === 'htpc';
     var requiresNvidiaGeneration = pickerState.device === 'desktop' && pickerState.gpu === 'nvidia';
@@ -490,10 +526,11 @@ jQuery(document).ready(function() {
     var hardware = pickerState.device;
     var imagename = imageName();
 
+    updatePickerBreadcrumb();
     jQuery('#image-builder').toggleClass('can-go-back', Boolean(pickerState.device && !imagename));
     jQuery('#image-builder').closest('.mcb-wrap-8qc5znbk').toggleClass('picker-active', !imagename);
 
-    jQuery('#nvidia-gpu-option').text(
+    jQuery('#nvidia-gpu-option span').text(
       pickerState.device === 'htpc' ? 'Nvidia GTX 1660 or RTX series' : 'Nvidia'
     );
 
@@ -549,13 +586,57 @@ jQuery(document).ready(function() {
       .attr('tabindex', showNvidiaWarning ? '-1' : '0');
   }
 
+  function scrollToActivePickerPanel() {
+    var target = jQuery('#image-builder-result').is(':visible')
+      ? jQuery('#image-builder-result')
+      : jQuery('#image-builder');
+    var headerHeight = jQuery('#mfn-header-template').outerHeight() || 0;
+
+    jQuery('html, body').animate({
+      scrollTop: target.offset().top - headerHeight
+    }, 500);
+  }
+
+  function updatePickerAndRestorePosition(option) {
+    var options = jQuery(option).closest('.picker-options').find('.picker-option:visible').get();
+    var optionsWrapped = options.length > 1 && options.some(function(candidate) {
+      return candidate.offsetTop !== options[0].offsetTop;
+    });
+
+    updatePicker();
+
+    if (optionsWrapped) {
+      scrollToActivePickerPanel();
+    }
+  }
+
+  jQuery('#image-builder-result [data-picker-edit]').on('click', function() {
+    var step = jQuery(this).data('picker-edit');
+
+    if (step === 'device') {
+      pickerState.device = '';
+      resetFrom('device');
+    } else if (step === 'gpu') {
+      pickerState.gpu = '';
+      resetFrom('gpu');
+    } else if (step === 'nvidia') {
+      pickerState.nvidiaDriver = '';
+      resetFrom('nvidia');
+    } else if (step === 'desktopEnvironment') {
+      pickerState.desktopEnvironment = '';
+    }
+
+    updatePicker();
+    scrollToActivePickerPanel();
+  });
+
   jQuery('#image-builder [data-device]').on('click', function(event) {
     event.preventDefault();
     pickerState.device = jQuery(this).data('device');
     resetFrom('device');
     jQuery('[data-device]').removeClass('is-selected');
     jQuery(this).addClass('is-selected');
-    updatePicker();
+    updatePickerAndRestorePosition(this);
   });
 
   jQuery('#image-builder [data-gpu]').on('click', function(event) {
@@ -567,7 +648,7 @@ jQuery(document).ready(function() {
     }
     jQuery('[data-gpu]').removeClass('is-selected');
     jQuery(this).addClass('is-selected');
-    updatePicker();
+    updatePickerAndRestorePosition(this);
   });
 
   jQuery('#image-builder [data-nvidia-driver]').on('click', function(event) {
@@ -576,7 +657,7 @@ jQuery(document).ready(function() {
     pickerState.nvidiaDriver = jQuery(this).data('nvidia-driver');
     jQuery('[data-nvidia-driver]').removeClass('is-selected');
     jQuery(this).addClass('is-selected');
-    updatePicker();
+    updatePickerAndRestorePosition(this);
   });
 
   jQuery('#image-builder [data-desktop-environment]').on('click', function(event) {
@@ -584,7 +665,7 @@ jQuery(document).ready(function() {
     pickerState.desktopEnvironment = jQuery(this).data('desktop-environment');
     jQuery('[data-desktop-environment]').removeClass('is-selected');
     jQuery(this).addClass('is-selected');
-    updatePicker();
+    updatePickerAndRestorePosition(this);
   });
 
   jQuery('#image-builder .picker-back').on('click', function(event) {

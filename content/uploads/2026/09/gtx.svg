@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="Layer_1"
+   data-name="Layer 1"
+   viewBox="0 0 249 92.260002"
+   version="1.1"
+   sodipodi:docname="nVidia-GeForce-GTX-Logo.svg"
+   width="249"
+   height="92.260002"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.4734848"
+     inkscape:cx="298.95116"
+     inkscape:cy="-50.560411"
+     inkscape:window-width="3440"
+     inkscape:window-height="1371"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Layer_1" />
+  <defs
+     id="defs1">
+    <style
+       id="style1">.cls-1{fill-rule:evenodd;}</style>
+  </defs>
+  <path
+     class="cls-1"
+     d="M 13.5,0 H 74.26 V 18 H 21 c -1.656854,0 -3,1.34315 -3,3 v 45 l 8.25,8.25 h 30 c 1.656854,0 3,-1.34315 3,-3 V 55.51 h -22.5 v -18 h 40.51 v 41.25 c 0,7.45584 -6.044156,13.5 -13.5,13.5 h -45 L 0,73.51 v -60 C 0.032815,6.06616 6.056191,0.03833 13.5,0 Z m 143.27,18 h -23.25 v 74.26 h -18 V 18 H 92.26 V 0 h 64.51 z M 167.25,0 H 189 L 205.87,25.95 222.75,0 H 244.5 L 216.75,42.67 249,92.26 H 227.28 L 205.9,59.39 184.53,92.26 H 162.77 L 195,42.67 Z"
+     id="path1"
+     sodipodi:nodetypes="cccssccssccccsscccccccccccccccccccccccccc"
+     style="fill:#ffffff" />
+</svg>

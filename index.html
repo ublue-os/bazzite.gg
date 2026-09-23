@@ -5295,7 +5295,7 @@
 				}
 			}
 		</style>
-		<link rel='stylesheet' id='style-css' href='content/themes/betheme-child/style274.css' type='text/css' media='all' />
+		<link rel='stylesheet' id='style-css' href='content/themes/betheme-child/style275.css' type='text/css' media='all' />
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/4.0.0/jquery.min.js" id="jquery-core-js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.5.2/jquery-migrate.min.js" id="jquery-migrate-js"></script>
 		<link rel="canonical" href="https://bazzite.gg/" />
@@ -6963,13 +6963,6 @@ https://www.forbes.com/sites/jasonevangelho/2024/12/03/5-reasons-you-should-run-
 														<h2 class="title">Download <span class="bazzite-name">Bazzite</span></h2>
 													</div>
 												</div>
-												<div class="column mcb-column mcb-item-vm71wq22a one laptop-one tablet-one mobile-one column_column">
-													<div class="mcb-column-inner mfn-module-wrapper mcb-column-inner-vm71wq22a mcb-item-column-inner">
-														<div class="column_attr mfn-inline-editor clearfix">
-															<p>Use the form below to get the correct ISO download link for your hardware and use case.<br><br>If you're already using a <a href="https://fedoraproject.org/atomic-desktops/" target="_blank">Fedora Atomic Desktop</a>, you can rebase to Bazzite <strong>without reinstalling</strong>.<br><br>Are you a developer? <a href="https://dev.bazzite.gg/" target="_blank">Check out <span style="white-space:nowrap;">Bazzite Developer eXperience</span></a> for images focused on your use case!</p>
-														</div>
-													</div>
-												</div>
 												<div class="wrap mcb-wrap mcb-wrap-8qc5znbk one-second tablet-one laptop-one-second mobile-one mfn-nested-wrap clearfix picker-active" data-desktop-col="one-second" data-laptop-col="laptop-one-second" data-tablet-col="tablet-one" data-mobile-col="mobile-one">
 													<div class="mcb-wrap-inner mcb-wrap-inner-8qc5znbk mfn-module-wrapper mfn-wrapper-for-wraps">
 														<div class="mcb-wrap-background-overlay"></div>
@@ -7001,15 +6994,27 @@ https://www.forbes.com/sites/jasonevangelho/2024/12/03/5-reasons-you-should-run-
 																				<div class="picker-step gpu-choice fade-transition hidden-fade">
 																					<p class="picker-question">What is your primary/discrete GPU?</p>
 																					<div class="picker-options" role="group" aria-label="GPU vendor">
-																						<button type="button" class="picker-option" data-gpu="amd-intel">AMD / Intel</button>
-																						<button type="button" class="picker-option" data-gpu="nvidia" id="nvidia-gpu-option">Nvidia</button>
+																						<button type="button" class="picker-option desktop-environment-option" data-gpu="amd-intel">
+																							<img class="desktop-environment-preview" src="content/uploads/2026/09/amd-intel.svg" alt="AMD or Intel" decoding="async">
+																							<span>AMD / Intel</span>
+																						</button>
+																						<button type="button" class="picker-option desktop-environment-option" data-gpu="nvidia" id="nvidia-gpu-option">
+																							<img class="desktop-environment-preview gpu-logo-preview" src="content/uploads/2026/09/nvidia.svg" alt="Nvidia" decoding="async">
+																							<span>Nvidia</span>
+																						</button>
 																					</div>
 																				</div>
 																				<div class="picker-step nvidia-choice fade-transition hidden-fade">
 																					<p class="picker-question">Which Nvidia GPU do you have?</p>
 																					<div class="picker-options" role="group" aria-label="Nvidia GPU generation">
-																						<button type="button" class="picker-option" data-nvidia-driver="proprietary">GTX 1080 or older</button>
-																						<button type="button" class="picker-option" data-nvidia-driver="open">GTX 1660 or RTX series</button>
+																						<button type="button" class="picker-option desktop-environment-option" data-nvidia-driver="proprietary">
+																							<img class="desktop-environment-preview gpu-logo-preview" src="content/uploads/2026/09/gtx.svg" alt="Nvidia GTX" decoding="async">
+																							<span>GTX 1080 or older</span>
+																						</button>
+																						<button type="button" class="picker-option desktop-environment-option" data-nvidia-driver="open">
+																							<img class="desktop-environment-preview gpu-logo-preview" src="content/uploads/2026/09/rtx.svg" alt="Nvidia RTX" decoding="async">
+																							<span>GTX 1660 or RTX series</span>
+																						</button>
 																					</div>
 																				</div>
 																				<div class="picker-step desktopEnvironment fade-transition hidden-fade">
@@ -7032,6 +7037,14 @@ https://www.forbes.com/sites/jasonevangelho/2024/12/03/5-reasons-you-should-run-
 													</div>
 												</div>
 												<div id="image-builder-result" class="fade-transition shown-fade is-obscured">
+															<nav class="picker-breadcrumb" aria-label="Your image choices">
+																<ol>
+																	<li data-picker-breadcrumb="device"><button type="button" data-picker-edit="device"><span class="picker-breadcrumb-label">Device</span><span class="picker-breadcrumb-answer"></span></button></li>
+																	<li data-picker-breadcrumb="gpu"><button type="button" data-picker-edit="gpu"><span class="picker-breadcrumb-label">GPU</span><span class="picker-breadcrumb-answer"></span></button></li>
+																	<li data-picker-breadcrumb="nvidia"><button type="button" data-picker-edit="nvidia"><span class="picker-breadcrumb-label">Generation</span><span class="picker-breadcrumb-answer"></span></button></li>
+																	<li data-picker-breadcrumb="desktopEnvironment"><button type="button" data-picker-edit="desktopEnvironment"><span class="picker-breadcrumb-label">Desktop</span><span class="picker-breadcrumb-answer"></span></button></li>
+																</ol>
+															</nav>
 												<div id="nvidia-gamemode-warning" class="gamemode-warning-overlay fade-transition hidden-fade">
 													<div class="gamemode-warning-content">
 														<span class="picker-message red">
@@ -7082,7 +7095,8 @@ https://www.forbes.com/sites/jasonevangelho/2024/12/03/5-reasons-you-should-run-
 														<span class="fine-print">The Legacy installer will be phased out soon, using the regular installer is recommended.</span>
 														<br><br>
 														<span class="fine-print">View the <a href="https://docs.bazzite.gg/General/Installation_Guide/index.html" target="_blank">Bazzite initial setup guide</a>.<br>
-														View all <a href="https://docs.bazzite.gg/" target="_blank">Bazzite documentation</a>.</span>
+														View all <a href="https://docs.bazzite.gg/" target="_blank">Bazzite documentation</a>.<br>
+														Are you a developer? Check out the <a href="https://dev.bazzite.gg/" target="_blank">Bazzite Developer eXperience</a>.</span>
 													</div>
 													<div id="Fedora" class="tabcontent" class="rebase" >
 														<br>
@@ -7248,7 +7262,7 @@ https://www.forbes.com/sites/jasonevangelho/2024/12/03/5-reasons-you-should-run-
 		<script type="text/javascript" src="content/themes/betheme/js/scripts2.js" id="mfn-scripts-js"></script>
 		<script type="text/javascript" src="content/themes/betheme/js/plugins/imagesloaded.min.js%3Fver=27.3.5" id="mfn-imagesloaded-js"></script>
 		<script type="text/javascript" src="content/themes/betheme/js/plugins/slick.min.js?ver=27.3.5" id="mfn-slick-js"></script>
-			<script type="text/javascript" src="content/themes/betheme-child/script125.js" id="script-js" defer></script>
+			<script type="text/javascript" src="content/themes/betheme-child/script126.js" id="script-js" defer></script>
 		<script type="text/javascript" src="content/themes/betheme/assets/lottie/lottie-player.js" id="mfn-lottie-player-js" defer></script>
 		<script type="text/javascript" src="content/themes/betheme-child/lottie.js" id="lottie" defer></script>
 		<script type="text/javascript" src="https://universal-blue.discourse.group/javascripts/embed-topics.js" id="discourse-js" defer></script>
