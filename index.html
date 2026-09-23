@@ -5295,7 +5295,7 @@
 				}
 			}
 		</style>
-		<link rel='stylesheet' id='style-css' href='content/themes/betheme-child/style273.css' type='text/css' media='all' />
+		<link rel='stylesheet' id='style-css' href='content/themes/betheme-child/style274.css' type='text/css' media='all' />
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" id="jquery-core-js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.5.2/jquery-migrate.min.js" id="jquery-migrate-js"></script>
 		<link rel="canonical" href="https://bazzite.gg/" />
@@ -5469,7 +5469,7 @@
 									</div>
 									<div class="column mcb-column mcb-item-0270g8ums one laptop-one tablet-one mobile-one column_button mfn-item-inline hide-mobile">
 										<div class="mcb-column-inner mfn-module-wrapper mcb-column-inner-0270g8ums mcb-item-button-inner">
-											<a class="button button-to-download has-icon button_right button_size_3" href="#image-picker" title="Download Bazzite">
+																<a class="button button-to-download has-icon button_right button_size_3" href="#image-builder" title="Download Bazzite">
 												<span class="button_icon download-icon">
 													<i class="fas fa-download"></i>
 												</span>
@@ -5640,7 +5640,7 @@
 									</div>
 									<div class="column mcb-column mcb-item-3itblyq2a one laptop-one tablet-one mobile-one column_button mfn-item-inline hide-mobile">
 										<div class="mcb-column-inner mfn-module-wrapper mcb-column-inner-3itblyq2a mcb-item-button-inner">
-											<a class="button button-to-download has-icon button_right button_size_3" href="#image-picker" title="Download Bazzite">
+																<a class="button button-to-download has-icon button_right button_size_3" href="#image-builder" title="Download Bazzite">
 												<span class="button_icon download-icon">
 													<i class="fas fa-download"></i>
 												</span>
@@ -6970,259 +6970,68 @@ https://www.forbes.com/sites/jasonevangelho/2024/12/03/5-reasons-you-should-run-
 														</div>
 													</div>
 												</div>
-												<div class="wrap mcb-wrap mcb-wrap-8qc5znbk one-second tablet-one laptop-one-second mobile-one mfn-nested-wrap clearfix" data-desktop-col="one-second" data-laptop-col="laptop-one-second" data-tablet-col="tablet-one" data-mobile-col="mobile-one">
+												<div class="wrap mcb-wrap mcb-wrap-8qc5znbk one-second tablet-one laptop-one-second mobile-one mfn-nested-wrap clearfix picker-active" data-desktop-col="one-second" data-laptop-col="laptop-one-second" data-tablet-col="tablet-one" data-mobile-col="mobile-one">
 													<div class="mcb-wrap-inner mcb-wrap-inner-8qc5znbk mfn-module-wrapper mfn-wrapper-for-wraps">
 														<div class="mcb-wrap-background-overlay"></div>
 														<div class="column mcb-column mcb-item-rabozulrg one laptop-one tablet-one mobile-one column_plain_text">
 															<div class="mcb-column-inner mfn-module-wrapper mcb-column-inner-rabozulrg mcb-item-plain_text-inner">
 																<div class="desc">
-																	<form id="image-builder" class="animate" data-anim-type="fadeInUp" autocomplete="off">
-																		<div class="download-logo fade-transition shown-fade">
-																			<img src="content/uploads/2024/03/download3.svg" alt="Fill in the form on the left to download Bazzite" width="250" height="250" decoding="async" loading="lazy">
-																		</div>
-																		<div class="selectedHardware">
-																			<label for="selectedHardware">What hardware are you using?</label>
-																			<div class="select-wrapper glow-effect">
-																				<select id="selectedHardware" name="hardware">
-																					<option disabled selected value>Select your hardware</option>
-																					<optgroup label="PCs">
-																						<option value="desktop">Desktop</option>
-																						<option value="htpc">Home Theater PC</option>
-																						<option value="framework-desktop">Framework Desktop</option>
-																					</optgroup>
-																					<optgroup label="Handhelds">
-																						<option value="steamdeck">Steam Deck (LCD &amp; OLED)</option>
-																						<option value="legion">Lenovo Legion Go &amp; Go 2 &amp; Go S</option>
-																						<option value="ally">ASUS Ally &amp; Ally X &amp; Xbox Allies</option>
-																						<option value="gpd">GPD</option>
-																						<option value="onexplayer">OneXPlayer</option>
-																						<option value="aokzoe">AOKZOE</option>
-																						<option value="ayn">AYN Loki</option>
-																						<option value="ayaneo">Ayaneo (x86)</option>
-																						<option value="claw">MSI Claw (BETA)</option>
-																						<option value="handheld">Other x86 Handheld PC</option>
-																						<option value="arm">Any ARM Handheld</option>
-																					</optgroup>
-																					<optgroup label="Laptops">
-																						<option value="framework">Framework Laptop</option>
-																						<option value="laptop">ASUS Laptop</option>
-																						<option value="laptop">Other Laptop</option>
-																						<option disabled value="aarch64">Apple Silicon (Coming soon)</option>
-																					</optgroup>
-																					<optgroup label="Tablets">
-																						<option value="asus-flow">ASUS ROG Flow Z13</option>
-																						<option value="minisforum">Minisforum V3</option>
-																					</optgroup>
-																					<optgroup label="Other">
-																						<option value="virtualmachine">Virtual Machine</option>
-																					</optgroup>
-																				</select>
-																			</div>
-																		</div>
-																		<div class="steam-deck fade-transition hidden-fade">
-																			<span class="picker-message red">If you're having issues booting this ISO, ensure the <span class="command-nobg">Setup Utility -&gt; USB Configuration -&gt; USB Dual Role Device</span> setting in your BIOS is set to <span class="command-nobg">XHCI</span> and not <span class="command-nobg">DRD</span>.</span>
-																		</div>
-																		<div class="ventoy-workaround fade-transition hidden-fade">
-																			<span class="picker-message red">Your hardware has issues booting the installation media and requires Ventoy in GRUB2 mode to boot properly. Please use <a href="https://www.ventoy.net/en/index.html" target="_blank">Ventoy</a> and <a href="https://www.ventoy.net/en/doc_grub2boot.html" target="_blank">follow these instructions</a>. Secure boot must be disabled for the installation, but can be re-enabled after our MOK key is enrolled and installation is complete.</span>
-																		</div>
-																		<div class="gpu fade-transition hidden-fade">
-																			<label for="gpuVendor">Who is the vendor of your primary GPU?</label>
-																			<div class="select-wrapper glow-effect">
-																				<select id="gpuVendor" name="gpuVendor">
-																					<option disabled selected value>Select your primary GPU vendor</option>
-																					<optgroup label="Modern GPUs">
-																						<option value="amd">AMD (RX 4xx+ | AI)</option>
-																						<option value="nvidia-open">Nvidia (RTX Series | GTX 16xx Series+)</option>
-																						<option value="intel">Intel (Tigerlake | ARC+)</option>
-																					</optgroup>
-																					<optgroup label="Older/Legacy GPUs">
-																						<option value="old-amd">AMD (HD/200/300/R9)</option>
-																						<option value="nvidia">Nvidia LTS (GTX 9xx-10xx Series)</option>
-																						<option value="old-intel">Intel (Skylake-Icelake)</option>
-																					</optgroup>
-																					<optgroup label="Even Older GPUs">
-																						<option disabled value>"Now this will run on my 486?"</option>
-																					</optgroup>
-																				</select>
-																			</div>
-																		</div>
-																		<div class="no-gamemode fade-transition hidden-fade">
-																			<span class="picker-message red">Your selected hardware does not support Steam Gaming Mode at this time. The <a href="https://docs.bazzite.gg/General/FAQ/#1-desktop-edition" target="_blank">Desktop version of Bazzite</a> is still available.</span>
-																		</div>
-																		<div class="desktopEnvironment fade-transition hidden-fade">
-																			<label for="desktopEnvironment">What desktop environment do you prefer?</label>
-																			<div class="select-wrapper glow-effect">
-																				<select id="desktopEnvironment" name="desktopEnvironment">
-																					<option disabled selected value>Pick a desktop environment</option>
-																					<option value="kde">KDE (Like SteamOS's Desktop)</option>
-																					<option value="gnome">GNOME</option>
-																				</select>
-																			</div>
-																		</div>
-																		<div class="gamemode fade-transition hidden-fade">
-																			<label for="steamGameMode">Do you want <a href="https://docs.bazzite.gg/Handheld_and_HTPC_edition/Steam_Gaming_Mode/" target="_blank">Steam Gaming Mode?</a></label>
-																			<div class="select-wrapper glow-effect">
-																				<select id="steamGameMode" name="steamGameMode">
-																					<option disabled selected value>Choose if you want Steam Gaming Mode</option>
-																					<option value="yes">Yes, I want to load directly into Steam Gaming Mode</option>
-																					<option value="no">No, I want a traditional desktop experience</option>
-																				</select>
-																			</div>
-																		</div>
-																		<div class="vm-gamemode fade-transition hidden-fade">
-																			<span class="picker-message red">When using Steam Gaming Mode in a virtual machine, you <strong>must</strong> pass-through a GPU.</span>
-																		</div>
-																																				<div class="gamemode-noigpu fade-transition hidden-fade">
-																			<span class="picker-message red">Some devices with two AMD GPUs (iGPU and dGPU) cause gamescope to be unable to detect your display resulting in a black screen. If you are affected, use an image without Steam Gaming Mode or disable your iGPU. <a href="https://github.com/ValveSoftware/gamescope/issues/1469" target="_blank">See this issue</a> for more information.</span>
-																		</div>
+																					<form id="image-builder" class="animate image-picker-wizard" data-anim-type="fadeInUp" autocomplete="off">
+																						<button type="button" class="picker-back" aria-label="Return to the previous question">
+																							<i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+																							<span>Back</span>
+																						</button>
+																						<div class="picker-step device-choice is-active">
+																					<p class="picker-question">What device do you want Bazzite for?</p>
+																					<div class="picker-options" role="group" aria-label="Device type">
+																						<button type="button" class="picker-option desktop-environment-option" data-device="desktop">
+																							<img class="desktop-environment-preview" src="content/uploads/2026/09/desktop-laptop.webp" alt="Desktop and laptop" decoding="async">
+																							<span>Desktop / Laptop</span>
+																						</button>
+																						<button type="button" class="picker-option desktop-environment-option" data-device="htpc">
+																							<img class="desktop-environment-preview" src="content/uploads/2026/09/htpc.webp" alt="Home Theater PC" decoding="async">
+																							<span>Home Theater PC</span>
+																						</button>
+																						<button type="button" class="picker-option desktop-environment-option" data-device="handheld">
+																							<img class="desktop-environment-preview" src="content/uploads/2026/09/handheld.webp" alt="Handheld" decoding="async">
+																							<span>Handheld</span>
+																						</button>
+																					</div>
+																				</div>
+																				<div class="picker-step gpu-choice fade-transition hidden-fade">
+																					<p class="picker-question">What is your primary/discrete GPU?</p>
+																					<div class="picker-options" role="group" aria-label="GPU vendor">
+																						<button type="button" class="picker-option" data-gpu="amd-intel">AMD / Intel</button>
+																						<button type="button" class="picker-option" data-gpu="nvidia" id="nvidia-gpu-option">Nvidia</button>
+																					</div>
+																				</div>
+																				<div class="picker-step nvidia-choice fade-transition hidden-fade">
+																					<p class="picker-question">Which Nvidia GPU do you have?</p>
+																					<div class="picker-options" role="group" aria-label="Nvidia GPU generation">
+																						<button type="button" class="picker-option" data-nvidia-driver="proprietary">GTX 1080 or older</button>
+																						<button type="button" class="picker-option" data-nvidia-driver="open">GTX 1660 or RTX series</button>
+																					</div>
+																				</div>
+																				<div class="picker-step desktopEnvironment fade-transition hidden-fade">
+																					<p class="picker-question">Which desktop environment do you prefer?</p>
+																					<div class="picker-options" role="group" aria-label="Desktop environment">
+																							<button type="button" class="picker-option desktop-environment-option" data-desktop-environment="kde">
+																								<img class="desktop-environment-preview" src="content/uploads/2026/09/kde-desktop.webp" alt="KDE desktop" decoding="async">
+																								<span>KDE</span>
+																							</button>
+																							<button type="button" class="picker-option desktop-environment-option" data-desktop-environment="gnome">
+																								<img class="desktop-environment-preview" src="content/uploads/2026/09/gnome-desktop.webp" alt="GNOME desktop" decoding="async">
+																								<span>GNOME</span>
+																							</button>
+																					</div>
+																				</div>
 																	</form>
 																</div>
 															</div>
 														</div>
 													</div>
 												</div>
-												<div class="wrap mcb-wrap mcb-wrap-zb5snph3 one-second tablet-one laptop-one-second mobile-one mfn-nested-wrap clearfix" data-desktop-col="one-second" data-laptop-col="laptop-one-second" data-tablet-col="tablet-one" data-mobile-col="mobile-one">
-													<div class="mcb-wrap-inner mcb-wrap-inner-zb5snph3 mfn-module-wrapper mfn-wrapper-for-wraps">
-														<div class="mcb-wrap-background-overlay"></div>
-														<div class="column mcb-column mcb-item-u50oajrqh one laptop-one tablet-one mobile-one column_plain_text">
-															<div class="mcb-column-inner mfn-module-wrapper mcb-column-inner-u50oajrqh mcb-item-plain_text-inner">
-																<div class="desc">
-																	<div id="hardware-description">
-																		<span class="fade-transition shown-fade explaination">
-																			<p>Use this form to get the correct ISO download link for your hardware and use case. <br><br>If you're already using a <a href="https://fedoraproject.org/atomic-desktops/" target="_blank">Fedora Atomic Desktop</a>, you can rebase to Bazzite <strong>without reinstalling</strong>.<br><br>Are you a developer? <a href="https://dev.bazzite.gg/" target="_blank">Check out <span style="white-space:nowrap;">Bazzite Developer eXperience</span></a> for images focused on your use case!</p>
-																		</span>
-																		<span class="fade-transition hidden-fade legion">
-																			<h3>Lenovo Legion Go &amp; Go 2 &amp; Go S<a href="https://www.lenovo.com/us/en/p/handheld/legion-go/len106g0001" aria-label="Lenovo Legion Go" target="_blank"><i class="fa-solid fa-link"></i></a></h3>
-																			<p>A high resolution screen, detachable controllers with dual gyros, sturdy hinge, 
-																			and hall effect joysticks and triggers, make the Legion Go the highest engineered
-																			handheld in the market.
-																			With dual per-controller gyro, 4 paddles, RGB, and touchpad that are usable in Steam 
-																			Input, it matches and exceeds the Steam Deck, there's nothing to miss from 
-																			Valve's offerings.<br>
-																			<br>
-																			Even better, detach the controllers and enjoy the same experience on the couch
-																			and bump to 30W to give that extra oomph to new titles.
-																			Pop the stand open, dock, and use yours as a desktop replacement, as many of us
-																			are doing.<br>
-																			<br>
-																			Having the fastest Laptop CPU AMD makes, you'll forget you even had a laptop.
-																			The Legion Go also makes for a great tablet, utilizing our built-in Android container
-																			support to take full advantage of that touch screen.
-																			Unfortunately, Windows may need to be dual booted to keep the BIOS updated.</p>
-																		</span>
-																		<span class="fade-transition hidden-fade ally">
-																			<h3>ASUS ROG Allies<a href="https://www.asus.com/us/site/gaming/rog/gaming-handheld/rog-ally.html" aria-label="ASUS ROG Ally" target="_blank"><i class="fa-solid fa-link"></i></a></h3>
-																			<p>Being ASUS' little 'hot rod', the ROG Ally runs at over 40W stock, with a cooling
-																			system to match.<br>
-																			<br>
-																			Combined with its 120hz VRR display and 800Hz gyro, the Ally is a joy to use
-																			and a must for the most discerning gamers.
-																			Experience 0 latency with your actions and the most consistent frame pacing in
-																			the market.<br>
-																			<br>
-																			With granular TDP controls, fan curves, RGB, and paddle support in Steam Input,
-																			Bazzite offers a hand-tuned experience for the Ally, that will have you leaving
-																			Windows behind.</p>
-																		</span>
-																		<span class="fade-transition hidden-fade steamdeck">
-																			<h3>Valve Steam Deck <a href="https://store.steampowered.com/steamdeck/" aria-label="Valve Steam Deck" target="_blank"><i class="fa-solid fa-link"></i></a></h3>
-																			<p>Bazzite offers a solid alternative to SteamOS, with up-to-date kernel,
-																			packages, and a first class desktop experience. Choose between
-																			KDE Plasma and GNOME, and layer system packages to turn your Steam Deck into a mini
-																			computer while still retaining feature parity with SteamOS, including firmware and BIOS
-																			updates.</p>
-																		</span>
-																		<span class="fade-transition hidden-fade gpd">
-																			<h3>GPD Devices <a href="https://gpd.hk/" aria-label="GPD Devices" target="_blank"><i class="fa-solid fa-link"></i></a></h3>
-																			<p>GPD devices offer the smallest form factor laptops out in the market, with high quality controllers built-in.
-																			It is intended for the seasoned road warrior.
-																			Great for gaming, work, and even light machine learning. <br>
-																			The GPD devices are a joy to use, and fully supported by Bazzite. It has out-of-the-box support for the L4, R4 buttons, touchpad, and gyro to be used in
-																			Steam Input, and bundled ROCm for your machine learning needs.<br>
-																			<br>
-																			We support all of GPD devices (2023/2024), including GPD Win 4, GPD Win Mini, Max 2.</p>
-																		</span>
-																		<span class="fade-transition hidden-fade onexplayer">
-																			<h3>OneXPlayer <a href="https://onexplayerstore.com" aria-label="OneXPlayer Devices" target="_blank"><i class="fa-solid fa-link"></i></a></h3>
-																			<p>OneXPlayer devices are the best 3-in-1 devices on the market, with great build quality, displays, and performance. Snap on the controllers, game, and then replace with a folio keyboard to take your work on the go.<br>
-																			<br>
-																			We offer great for all OneXPlayer devices. The exception is TDP Control for Intel devices, where the turbo button can be used to switch between 15W and 25W, and the 2 Pro not having speaker support.<br>
-																			<br>
-																			Supported devices enjoy Gyro, RGB, back button support, fan curves, and charge limitting out of the box.</p>
-																		</span>
-																		<span class="fade-transition hidden-fade aokzoe">
-																			<h3>AOKZOE<a href="https://aokzoestore.com" aria-label="AOKZOE Devices" target="_blank"><i class="fa-solid fa-link"></i></a></h3>
-																			<p>
-																			The AOKZOE A1X offers a premium experience, with a nice large 8in 1200p VRR screen, great speakers, and incredible performance.
-																			<br><br>
-																			It is fully supported on Bazzite, with Gyro, RGB, fan curves, and charge limitting working out of the box.
-																			<br><br>
-																			A1, A1 Pro, and A2 are also partly supported, with basic controls and fan curves. We are looking into improving support for these devices in the future.
-																			</p>
-																		</span>
-																		<span class="fade-transition hidden-fade ayn">
-																			<h3>Ayn Loki</h3>
-																			<p>The Ayn Loki is our pick for the most portable handheld in the market right now.<br><br>
-																			With a great high resolution screen, controls that feel great, and sick looking RGB handles, there's a lot to love. We offer RGB control out-of-the-box, and the handheld experience you would expect with such a handheld. We have verified support for the Loki Max, but if you own one of the other variants then get in touch with us.
-																			We will make sure the next Bazzite version has great support for your unit too.</p>
-																		</span>
-																		<span class="fade-transition hidden-fade claw">
-																			<h3>MSI Claw</h3>
-																			<p>The MSI Claw is a powerful Intel-based handheld gaming PC with impressive performance and features.
-																				With its sleek design, responsive controls, and vibrant display, the Claw delivers an excellent gaming experience. <br><br>
-																				Note that Gyro is not currently supported.</p>
-																		</span>
-																		<span class="fade-transition hidden-fade htpc">
-																			<h3>Home Theater PCs</h3>
-																			<p>What makes Bazzite great for handhelds transfers over to Home Theater PCs. Enjoy the PC gaming console-like experience that a setup like that should have from the comfort of your couch. Feel free to bump up the frame-rate and resolution, without the power limitations of a handheld.<br>
-																			<br>
-																			This experience is powered by Valve's window manager, Gamescope, which is included in our Handheld/HTPC images. Gamescope has certain hardware requirements with fantastic support for recent AMD GPUs, Intel ARC GPUs, and support for Nvidia GPUs in beta.</p>
-																		</span>
-																		<span class="fade-transition hidden-fade desktop laptop surface asus">
-																			<h3>Desktops &amp; Laptops</h3>
-																			<p>Bazzite marries Cloud technology, gaming, and developer tools into a compelling package.
-																			With Bazzite, you can work and game on the same OS, regardless of what your hardware is
-																			or what your work consists of.<br>
-																			<br>
-																			We make sure our desktop images work on ASUS Laptops, Lenovo Legion Laptops, and on AMD, Intel, and Nvidia GPUs.
-																			Out-of-the-box tools such as Distrobox, Flatpak, and package layering, you
-																			can install that one missing package like a VPN client you bought
-																			a year ago, all while keeping the benefits of an image based operating system.<br>
-																			<br>
-																			<em><strong>What benefits does Cloud Native bring?</strong></em> A scenario where an update breaks a package occurs, but now you can completely rollback
-																			safely and quickly to any Bazzite build that came out within the last 90 days.
-																			Delivered straight to you from our image repositories.
-																			Rollbacks and rebasing almost act like a cloud save for your operating system.</p>
-																		</span>
-																		<span class="fade-transition hidden-fade framework framework-desktop">
-																			<a href="https://frame.work/" target="_blank"><img style="width:70%;margin: auto auto 30px auto;left:0;right:0;position:relative;display:block;" src="content/uploads/2024/03/framework.svg" alt="Framework" width="884" height="116" decoding="async" loading="lazy"></a>
-																			<p><a href="https://frame.work/linux" target="_blank">Bazzite is officially supported by Framework</a>, with out-of-the-box support for all of Framework's hardware,
-																			including the custom handhelds community members keep showing off!<br>
-																			<br>
-																			Enjoy enhanced <a href="https://frame.work/products/16-graphics-module-amd-radeon-rx-7700s" target="_blank">dGPU</a> support on the <a href="https://frame.work/products/laptop16-diy-amd-7040" target="_blank">Framework 16</a>, no setup, no launch options, no fuss. Applications like Steam and Lutris are automatically configured to run on your dGPU for optimal performance.
-																			Thanks to Framework's modules you can even add a MicroSD card slot and share games with your other Bazzite running hardware - plug and play just like any gaming handheld.<br>
-																			<br>
-																			<em><strong>Using a Framework Desktop?</strong></em> Be sure to select Steam Gaming Mode for the ultimate console-like gaming experience.<br>
-																			<br>
-																			<em><strong>Looking to do more than game?</strong></em> Bazzite comes with full support for SELinux &amp; Secure Boot, and contains helpful ujust commands for setting up TPM unlock for LUKS drive encryption and full Ollama AI workload support.</p>
-																		</span>
-																		<span class="fade-transition hidden-fade handheld">
-																			<h3>Other Handheld PCs <a href="https://docs.bazzite.gg/Handheld_and_HTPC_edition/Steam_Gaming_Mode/index.html" aria-label="Alternative Handheld PCs" target="_blank"><i class="fa-solid fa-link"></i></a></h3>
-																			<p><strong>Note</strong>: Intel and Ayaneo handheld support is still limited.<br>
-																			<br>
-																			For most Ayaneo handhelds we offer controller support, but certain models either have stability issues or are missing a speaker driver.
-																			<br>
-																			If your handheld hardware is not listed, then you can still give Bazzite a try with our Handheld/HTPC image.<br>
-																			<br>
-																			Your mileage may vary with untested hardware.</p>
-																		</span>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div id="image-builder-result" class="fade-transition hidden-fade">
+												<div id="image-builder-result" class="fade-transition shown-fade is-obscured">
 												<div id="nvidia-gamemode-warning" class="gamemode-warning-overlay fade-transition hidden-fade">
 													<div class="gamemode-warning-content">
 														<span class="picker-message red">
@@ -7439,7 +7248,7 @@ https://www.forbes.com/sites/jasonevangelho/2024/12/03/5-reasons-you-should-run-
 		<script type="text/javascript" src="content/themes/betheme/js/scripts2.js" id="mfn-scripts-js"></script>
 		<script type="text/javascript" src="content/themes/betheme/js/plugins/imagesloaded.min.js%3Fver=27.3.5" id="mfn-imagesloaded-js"></script>
 		<script type="text/javascript" src="content/themes/betheme/js/plugins/slick.min.js?ver=27.3.5" id="mfn-slick-js"></script>
-		<script type="text/javascript" src="content/themes/betheme-child/script124.js" id="script-js" defer></script>
+			<script type="text/javascript" src="content/themes/betheme-child/script125.js" id="script-js" defer></script>
 		<script type="text/javascript" src="content/themes/betheme/assets/lottie/lottie-player.js" id="mfn-lottie-player-js" defer></script>
 		<script type="text/javascript" src="content/themes/betheme-child/lottie.js" id="lottie" defer></script>
 		<script type="text/javascript" src="https://universal-blue.discourse.group/javascripts/embed-topics.js" id="discourse-js" defer></script>

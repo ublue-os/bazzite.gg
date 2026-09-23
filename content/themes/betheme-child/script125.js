@@ -229,10 +229,6 @@ jQuery(document).ready(function() {
 
       var scrollLocation = jQuery(jQuery.attr(this, 'href')).offset().top - jQuery('#mfn-header-template').outerHeight();
 
-      if(jQuery('#image-builder-result.shown-fade').length > 0) {
-        scrollLocation = jQuery('#hardware-description').offset().top + jQuery('#hardware-description').outerHeight() - jQuery('#mfn-header-template').outerHeight()
-      }
-
       jQuery('html, body').animate({
           scrollTop: scrollLocation
       }, 500);
@@ -434,193 +430,95 @@ jQuery(document).ready(function() {
     });
   }
 
-  jQuery('#image-builder #desktopEnvironment, #image-builder #selectedHardware, #image-builder #gpuVendor, #image-builder #steamGameMode').on('change', function() {
-    // ARM handhelds aren't supported by Bazzite, send these users to Armada instead
-    if (this.id === 'selectedHardware' && jQuery(this).val() === 'arm') {
-      this.selectedIndex = 0;
-      window.location.href = 'https://armadaos.dev/';
-      return;
+  const pickerState = {
+    device: '',
+    gpu: '',
+    nvidiaDriver: '',
+    desktopEnvironment: ''
+  };
+
+  function showStep(selector) {
+    jQuery('#image-builder .picker-step').removeClass('is-active hidden-fade shown-fade');
+    if (selector) {
+      jQuery(selector).addClass('is-active');
+    }
+  }
+
+  function resetFrom(step) {
+    if (step === 'device') {
+      pickerState.gpu = '';
+      pickerState.nvidiaDriver = '';
+      pickerState.desktopEnvironment = '';
+      jQuery('[data-gpu], [data-nvidia-driver], [data-desktop-environment]').removeClass('is-selected');
+    } else if (step === 'gpu') {
+      pickerState.nvidiaDriver = '';
+      pickerState.desktopEnvironment = '';
+      jQuery('[data-nvidia-driver], [data-desktop-environment]').removeClass('is-selected');
+    } else if (step === 'nvidia') {
+      pickerState.desktopEnvironment = '';
+      jQuery('[data-desktop-environment]').removeClass('is-selected');
+    }
+  }
+
+  function imageName() {
+    if (!pickerState.desktopEnvironment || !pickerState.device) {
+      return '';
     }
 
-    jQuery(this).parent('.select-wrapper').removeClass('glow-effect');
-    var desktopEnvironment = jQuery('#desktopEnvironment').parent('div').parent('div').hasClass('hidden-fade') ? '' : jQuery('#desktopEnvironment').val();
-    var hardware = jQuery('#selectedHardware').parent('div').parent('div').hasClass('hidden-fade') ? '' : jQuery('#selectedHardware').val();
-    var gpuVendor = jQuery('#gpuVendor').parent('div').parent('div').hasClass('hidden-fade') ? '' : jQuery('#gpuVendor').val();
-    var steamGameMode = jQuery('#steamGameMode').parent('div').parent('div').hasClass('hidden-fade') ? '' : jQuery('#steamGameMode').val();
+    var usesGamingMode = pickerState.device === 'htpc' || pickerState.device === 'handheld';
+    var imagename = usesGamingMode ? 'bazzite-deck' : 'bazzite';
 
-    jQuery('#hardware-description .explaination').removeClass('shown-fade').addClass('hidden-fade');
-    jQuery('#hardware-description > span').addClass('hidden-fade').removeClass('shown-fade');
-    jQuery('#image-builder .gpu, #image-builder .gamemode').addClass('hidden-fade').removeClass('shown-fade');
-    jQuery('#image-builder .no-gamemode').addClass('hidden-fade').removeClass('shown-fade');
-    jQuery('#image-builder .vm-gamemode').addClass('hidden-fade').removeClass('shown-fade');
-    jQuery('#image-builder .ventoy-workaround').addClass('hidden-fade').removeClass('shown-fade');
-    jQuery('#image-builder .vm-gamemode').addClass('hidden-fade').removeClass('shown-fade');
-
-    if (hardware !== '') {
-      jQuery('#image-builder .desktopEnvironment').removeClass('hidden-fade').addClass('shown-fade');
-      jQuery('#image-builder .gpu').removeClass('hidden-fade').addClass('shown-fade');
-      jQuery('#image-builder .gamemode').removeClass('hidden-fade').addClass('shown-fade');
-      jQuery('#image-builder .no-gamemode').addClass('hidden-fade').removeClass('shown-fade');
-      jQuery('#image-builder .steam-deck').removeClass('shown-fade').addClass('hidden-fade');
-      jQuery('#image-builder .rog-ally').removeClass('shown-fade').addClass('hidden-fade');
-      if (gamemodeHardware.includes(hardware)) {
-        jQuery('#image-builder .gamemode').addClass('hidden-fade').removeClass('shown-fade');
-      } else if (handheldHardware.includes(hardware)) {
-        jQuery('#image-builder .gpu, #image-builder .gamemode').addClass('hidden-fade').removeClass('shown-fade');
-        if (hardware == 'ally') {
-          jQuery('#image-builder .rog-ally').addClass('shown-fade').removeClass('hidden-fade');
-        }
-        if (valveHardware.includes(hardware)) {
-          jQuery('#image-builder .steam-deck').addClass('shown-fade').removeClass('hidden-fade');
-        }
-      } else if (apuHardware.includes(hardware)) {
-        jQuery('#image-builder .gpu').addClass('hidden-fade').removeClass('shown-fade');
-      } else if (noGamemodeHardware.includes(gpuVendor) || noGamemodeHardware.includes(hardware)) {
-        jQuery('#image-builder .gamemode').addClass('hidden-fade').removeClass('shown-fade');
-        jQuery('#image-builder .vm-gamemode').addClass('hidden-fade').removeClass('shown-fade');
-        jQuery('#image-builder .no-gamemode').removeClass('hidden-fade').addClass('shown-fade');
-      } else if (hardware == 'virtualmachine') {
-        jQuery('#image-builder .vm-gamemode').removeClass('hidden-fade').addClass('shown-fade');
-      } else if (!gpuVendor) {
-        jQuery('#image-builder .gamemode').addClass('hidden-fade').removeClass('shown-fade');
-        jQuery('#image-builder .no-gamemode').addClass('hidden-fade').removeClass('shown-fade');
-      }
-
-      if (ventoyWorkaroundHardware.includes(hardware)) {
-        jQuery('#image-builder .ventoy-workaround').removeClass('hidden-fade').addClass('shown-fade');
-      } else {
-        jQuery('#image-builder .ventoy-workaround').addClass('hidden-fade').removeClass('shown-fade');
-      }
-
-      jQuery('#hardware-description .' + hardware).addClass('shown-fade').removeClass('hidden-fade');
-
-      if (gamemodeHardware.includes(hardware)) {
-        jQuery('#gpuVendor option[value="nvidia"]').prop('disabled', true);
-        jQuery('#gpuVendor option[value="old-amd"]').prop('disabled', true);
-        jQuery('#gpuVendor option[value="old-intel"]').prop('disabled', true);
-      } else if (noProprietaryNvidiaHardware.includes(hardware))  {
-        jQuery('#gpuVendor option[value="nvidia"]').prop('disabled', true);
-      } else {
-        jQuery('#gpuVendor option[value="nvidia"]').prop('disabled', false);
-        jQuery('#gpuVendor option[value="old-amd"]').prop('disabled', false);
-        jQuery('#gpuVendor option[value="old-intel"]').prop('disabled', false);
-      }
-    }
-
-    if (gamemodeHardware.includes(hardware)) {
-      jQuery('#image-builder .gamemode').addClass('hidden-fade').removeClass('shown-fade');
-    } else if (noGamemodeHardware.includes(gpuVendor) || noGamemodeHardware.includes(hardware)) {
-      jQuery('#image-builder .gamemode').addClass('hidden-fade').removeClass('shown-fade');
-      jQuery('#image-builder .no-gamemode').removeClass('hidden-fade').addClass('shown-fade');
-      jQuery('#image-builder .vm-gamemode').addClass('hidden-fade').removeClass('shown-fade');
-    } else if (gpuVendor !== '') {
-      jQuery('#image-builder .gamemode').removeClass('hidden-fade').addClass('shown-fade');
-      jQuery('#image-builder .no-gamemode').addClass('hidden-fade').removeClass('shown-fade');
-
-      if (hardware == 'virtualmachine') {
-        jQuery('#image-builder .vm-gamemode').removeClass('hidden-fade').addClass('shown-fade');
-      }
-    } else if (!apuHardware.includes(hardware)) {
-      jQuery('#image-builder .gamemode').addClass('hidden-fade').removeClass('shown-fade');
-      jQuery('#image-builder .no-gamemode').addClass('hidden-fade').removeClass('shown-fade');
-    }
-
-    if(gamemodeHardware.includes(hardware)) {
-      steamGameMode = 'yes';
-    }
-
-    var imagename = 'bazzite';
-
-    switch(hardware) {
-      case 'steamdeck':
-      case 'handheld':
-      case 'legion':
-      case 'ayn':
-      case 'gpd':
-      case 'onexplayer':
-      case 'aokzoe':
-      case 'claw':
-      case 'ayaneo':
-        imagename += '-deck';
-        break;
-
-      case 'ally':
-        imagename += '-deck';
-        break;
-
-      case 'asus':
-        if(steamGameMode === 'yes' && gpuVendor != 'nvidia-open') {
-          imagename += '-ally';
-        }
-        break;
-    }
-
-    if (gpuVendor === 'nvidia-open' && steamGameMode == 'yes' && !handheldHardware.includes(hardware)) {
+    if (pickerState.device === 'desktop' && pickerState.gpu === 'nvidia') {
+      imagename += pickerState.nvidiaDriver === 'proprietary' ? '-nvidia' : '-nvidia-open';
+    } else if (pickerState.device === 'htpc' && pickerState.gpu === 'nvidia') {
       imagename += '-nvidia';
     }
 
-    switch(desktopEnvironment) {
-      case 'gnome':
-        imagename += '-gnome';
-        break;
-
-      case 'budgie':
-        imagename += '-budgie';
-        break;
-
-      case 'cosmic':
-        imagename += '-cosmic';
-        break;
+    if (pickerState.desktopEnvironment === 'gnome') {
+      imagename += '-gnome';
     }
 
-    switch(hardware) {
-      case 'asus':
-        if(steamGameMode !== 'yes') {
-          imagename += '-asus';
-        }
-        break;
+    return imagename;
+  }
 
-      case 'surface':
-        imagename += '-surface';
-        break;
-    }
+  function updatePicker() {
+    var requiresGpu = pickerState.device === 'desktop' || pickerState.device === 'htpc';
+    var requiresNvidiaGeneration = pickerState.device === 'desktop' && pickerState.gpu === 'nvidia';
+    var showDesktopEnvironment = pickerState.device === 'handheld'
+      || (requiresGpu && pickerState.gpu && !requiresNvidiaGeneration)
+      || (requiresNvidiaGeneration && pickerState.nvidiaDriver);
+    var hardware = pickerState.device;
+    var imagename = imageName();
 
-    if (gpuVendor === 'nvidia' && !handheldHardware.includes(hardware) && !noProprietaryNvidiaHardware.includes(hardware)) {
-      imagename += '-nvidia';
-    }
+    jQuery('#image-builder').toggleClass('can-go-back', Boolean(pickerState.device && !imagename));
+    jQuery('#image-builder').closest('.mcb-wrap-8qc5znbk').toggleClass('picker-active', !imagename);
 
-    if (gpuVendor === 'nvidia-open' && steamGameMode !== 'yes' && !handheldHardware.includes(hardware)) {
-      imagename += '-nvidia-open';
-    }
+    jQuery('#nvidia-gpu-option').text(
+      pickerState.device === 'htpc' ? 'Nvidia GTX 1660 or RTX series' : 'Nvidia'
+    );
 
-    if (gpuVendor === 'nvidia-open' && steamGameMode === 'yes') {
-      imagename = imagename.replace('bazzite', 'bazzite-deck')
-    } else if ((!noGamemodeHardware.includes(gpuVendor) && !noGamemodeHardware.includes(hardware)) && !asusHardware.includes(hardware) && steamGameMode === 'yes') {
-      imagename = imagename.replace('bazzite', 'bazzite-deck')
-    }
-
-    // It's possible to get bazzite-deck-deck if the user selects anything with gamemode and then changes
-    // hardware selection to handheld. This fixes that.
-    imagename = imagename.replace('deck-deck', 'deck');
-
-    if (gpuVendor === "amd" && steamGameMode === 'yes' && !gamemodeHardware.includes(hardware) && !apuHardware.includes(hardware) && hardware != 'virtualmachine') {
-      jQuery('#image-builder .gamemode-noigpu').removeClass('hidden-fade').addClass('shown-fade');
+    if (!pickerState.device) {
+      showStep('#image-builder .device-choice');
+    } else if (requiresGpu && !pickerState.gpu) {
+      showStep('#image-builder .gpu-choice');
+    } else if (requiresNvidiaGeneration && !pickerState.nvidiaDriver) {
+      showStep('#image-builder .nvidia-choice');
+    } else if (showDesktopEnvironment && !pickerState.desktopEnvironment) {
+      showStep('#image-builder .desktopEnvironment');
     } else {
-      jQuery('#image-builder .gamemode-noigpu').addClass('hidden-fade').removeClass('shown-fade');
+      showStep('');
     }
 
-    // Display the result
-    var allSelectionsMade = true;
-    jQuery('#image-builder .shown-fade select').each(function() {
-        if (!jQuery(this).val()) {
-            allSelectionsMade = false;
-            return false;
-        }
-    });
+    jQuery('#hardware-description .explaination, #hardware-description > span').addClass('hidden-fade').removeClass('shown-fade');
+    if (hardware) {
+      jQuery('#hardware-description .' + hardware).removeClass('hidden-fade').addClass('shown-fade');
+    } else {
+      jQuery('#hardware-description .explaination').removeClass('hidden-fade').addClass('shown-fade');
+    }
 
-    if( imagename !== '' && allSelectionsMade ) {
-      jQuery('.download-logo').addClass('hidden-fade').removeClass('shown-fade');
-      jQuery('#image-builder-result').removeClass('hidden-fade').addClass('shown-fade');
+    if (imagename) {
+      jQuery('#image-builder').addClass('is-complete');
+      jQuery('#image-builder-result').removeClass('is-obscured');
       jQuery('#image-builder-result .image-name').text(imagename);
       jQuery('.button-download').attr('href', 'https://download.bazzite.gg/' + imagename + '-stable-amd64.iso');
       jQuery('.button-liveiso').attr('href', 'https://download.bazzite.gg/' + imagename + '-stable-live-amd64.iso');
@@ -630,45 +528,110 @@ jQuery(document).ready(function() {
       jQuery('.sig-liveiso').attr('href', 'https://download.bazzite.gg/' + imagename + '-stable-live-amd64.iso.sig');
       jQuery('.ghcr-details').attr('href', 'https://ghcr.io/ublue-os/' + imagename);
 
-      //Show Videos
       jQuery('.video-container > .fade-transition').removeClass('shown-fade').addClass('hidden-fade');
       jQuery('.video-container > .fade-transition.' + hardware).removeClass('hidden-fade').addClass('shown-fade');
       jQuery('.video-container iframe').attr('src', '');
       jQuery('.video-container > .' + hardware + ' > iframe').each(function() {
-          jQuery(this).attr('src', jQuery(this).attr('data-src'));
+        jQuery(this).attr('src', jQuery(this).attr('data-src'));
       });
 
-      if(!hasScrolled) {
-        jQuery('html,body').animate({
-          scrollTop: jQuery('#hardware-description').offset().top + jQuery('#hardware-description').outerHeight() - jQuery('#mfn-header-template').outerHeight()
-        }, 500);
-        hasScrolled = true;
-      }
     } else {
-      jQuery('#image-builder-result').addClass('hidden-fade').removeClass('shown-fade');
+      jQuery('#image-builder').removeClass('is-complete');
+      jQuery('#image-builder-result').addClass('is-obscured');
     }
 
-    // Nvidia/Intel gamemode beta overlay
     jQuery('#nvidia-gamemode-ack').prop('checked', false);
-    var gamemodeBetaActive = (gamemodeBetaHardware.includes(gpuVendor) || gamemodeBetaHardware.includes(hardware))
-      && desktopHardware.includes(hardware) && steamGameMode === 'yes';
     var warningOverlay = jQuery('#nvidia-gamemode-warning');
+    var showNvidiaWarning = imagename && pickerState.device === 'htpc' && pickerState.gpu === 'nvidia';
+    warningOverlay.toggleClass('hidden-fade', !showNvidiaWarning).toggleClass('shown-fade', showNvidiaWarning);
+    jQuery('#image-builder-result').toggleClass('has-warning', showNvidiaWarning);
+    jQuery('#image-builder-result a.button-liveiso, #image-builder-result a.button-download, #image-builder-result a.button-torrent')
+      .attr('tabindex', showNvidiaWarning ? '-1' : '0');
+  }
 
-    if (gamemodeBetaActive && jQuery('#image-builder-result').hasClass('shown-fade')) {
-      warningOverlay.removeClass('hidden-fade').addClass('shown-fade');
-      jQuery('#image-builder-result a.button-liveiso, #image-builder-result a.button-download, #image-builder-result a.button-torrent')
-        .attr('tabindex', '-1');
-    } else {
-      warningOverlay.addClass('hidden-fade').removeClass('shown-fade');
-      jQuery('#image-builder-result a.button-liveiso, #image-builder-result a.button-download, #image-builder-result a.button-torrent')
-        .attr('tabindex', '0');
+  jQuery('#image-builder [data-device]').on('click', function(event) {
+    event.preventDefault();
+    pickerState.device = jQuery(this).data('device');
+    resetFrom('device');
+    jQuery('[data-device]').removeClass('is-selected');
+    jQuery(this).addClass('is-selected');
+    updatePicker();
+  });
+
+  jQuery('#image-builder [data-gpu]').on('click', function(event) {
+    event.preventDefault();
+    pickerState.gpu = jQuery(this).data('gpu');
+    resetFrom('gpu');
+    if (pickerState.device === 'htpc' && pickerState.gpu === 'nvidia') {
+      pickerState.nvidiaDriver = 'open';
     }
+    jQuery('[data-gpu]').removeClass('is-selected');
+    jQuery(this).addClass('is-selected');
+    updatePicker();
+  });
+
+  jQuery('#image-builder [data-nvidia-driver]').on('click', function(event) {
+    event.preventDefault();
+    resetFrom('nvidia');
+    pickerState.nvidiaDriver = jQuery(this).data('nvidia-driver');
+    jQuery('[data-nvidia-driver]').removeClass('is-selected');
+    jQuery(this).addClass('is-selected');
+    updatePicker();
+  });
+
+  jQuery('#image-builder [data-desktop-environment]').on('click', function(event) {
+    event.preventDefault();
+    pickerState.desktopEnvironment = jQuery(this).data('desktop-environment');
+    jQuery('[data-desktop-environment]').removeClass('is-selected');
+    jQuery(this).addClass('is-selected');
+    updatePicker();
+  });
+
+  jQuery('#image-builder .picker-back').on('click', function(event) {
+    event.preventDefault();
+    jQuery('#nvidia-gamemode-warning').addClass('hidden-fade').removeClass('shown-fade');
+    jQuery('#image-builder-result').removeClass('has-warning');
+
+    if (pickerState.desktopEnvironment && pickerState.device === 'handheld') {
+      pickerState.device = '';
+      pickerState.desktopEnvironment = '';
+    } else if (pickerState.desktopEnvironment && pickerState.device === 'htpc') {
+      pickerState.gpu = '';
+      pickerState.nvidiaDriver = '';
+      pickerState.desktopEnvironment = '';
+    } else if (pickerState.desktopEnvironment && pickerState.gpu === 'nvidia') {
+      pickerState.nvidiaDriver = '';
+      pickerState.desktopEnvironment = '';
+    } else if (pickerState.desktopEnvironment) {
+      pickerState.gpu = '';
+      pickerState.desktopEnvironment = '';
+    } else if (pickerState.nvidiaDriver) {
+      pickerState.nvidiaDriver = '';
+    } else if (pickerState.gpu) {
+      pickerState.gpu = '';
+    } else {
+      pickerState.device = '';
+    }
+
+    jQuery('[data-device], [data-gpu], [data-nvidia-driver], [data-desktop-environment]').removeClass('is-selected');
+    if (pickerState.device) {
+      jQuery('[data-device="' + pickerState.device + '"]').addClass('is-selected');
+    }
+    if (pickerState.gpu) {
+      jQuery('[data-gpu="' + pickerState.gpu + '"]').addClass('is-selected');
+    }
+    if (pickerState.nvidiaDriver) {
+      jQuery('[data-nvidia-driver="' + pickerState.nvidiaDriver + '"]').addClass('is-selected');
+    }
+
+    updatePicker();
   });
 
   jQuery('#nvidia-gamemode-ack').on('change', function () {
     var overlay = jQuery('#nvidia-gamemode-warning');
     if (jQuery(this).is(':checked')) {
       overlay.addClass('hidden-fade').removeClass('shown-fade');
+      jQuery('#image-builder-result').removeClass('has-warning');
       jQuery('#image-builder-result a.button-liveiso, #image-builder-result a.button-download, #image-builder-result a.button-torrent')
         .attr('tabindex', '0');
     } else {
