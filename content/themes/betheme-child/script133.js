@@ -652,7 +652,6 @@ jQuery(document).ready(function() {
     }
 
     updatePicker();
-    scrollToActivePickerPanel();
   });
 
   jQuery('#image-builder [data-device]').on('click', function(event) {
