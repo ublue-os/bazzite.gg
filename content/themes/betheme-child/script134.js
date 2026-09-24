@@ -549,7 +549,7 @@ jQuery(document).ready(function() {
     jQuery('#image-builder').closest('.mcb-wrap-8qc5znbk').toggleClass('picker-active', !imagename);
 
     jQuery('#nvidia-gpu-option span').text(
-      pickerState.device === 'htpc' ? 'Nvidia GTX 1660 or RTX series' : 'Nvidia'
+      pickerState.device === 'htpc' ? 'Nvidia GTX 16xx or RTX series' : 'Nvidia'
     );
     jQuery('#nvidia-gpu-option img')
       .attr('src', pickerState.device === 'htpc'
