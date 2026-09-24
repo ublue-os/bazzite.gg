@@ -420,7 +420,7 @@ jQuery(document).ready(function() {
   if(jQuery('.changelog').length > 0) {
     //Show changelog
     jQuery.ajax({
-      url : "https://api.github.com/repos/ublue-os/bazzite/releases",
+      url : "/bazzite-release-data.json",
       dataType: "json",
       success : function (data) {
         var changelogs = '';

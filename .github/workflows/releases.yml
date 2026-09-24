@@ -1,0 +1,32 @@
+name: Bazzite Releases
+on:
+  schedule: [{cron: "0 */6 * * *"}]
+  workflow_dispatch:
+jobs:
+  releases-update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Download Release Data
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          curl --fail --silent --show-error --location --retry 3 \
+            --header "Authorization: Bearer ${GH_TOKEN}" \
+            --header "Accept: application/vnd.github+json" \
+            --header "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/ublue-os/bazzite/releases" \
+            --output bazzite-release-data.json
+          jq --exit-status \
+            'if type == "array" and length > 0 and all(.[]; has("name") and has("body") and has("prerelease")) then . else error("Invalid release data") end' \
+            bazzite-release-data.json > bazzite-release-data.tmp
+          mv bazzite-release-data.tmp bazzite-release-data.json
+        working-directory: ${{ github.workspace }}
+
+      - name: Write Release Data to Repository
+        uses: test-room-7/action-update-file@6b8249d09d5926fbae288c0bb640757f09ec7ce0 # v2
+        with:
+          file-path: bazzite-release-data.json
+          commit-msg: Bazzite Release Data Refresh
+          github-token: ${{ secrets.GITHUB_TOKEN }}
