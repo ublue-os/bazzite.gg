@@ -502,7 +502,7 @@ jQuery(document).ready(function() {
   function updatePickerBreadcrumb() {
     var labels = {
       device: {
-        desktop: 'Desktop',
+        desktop: 'Desktop/Laptop',
         htpc: 'HTPC',
         handheld: 'Handheld'
       },
