@@ -18,11 +18,49 @@ jobs:
           curl https://api.github.com/repos/ublue-os/bazzite/contributors --output ./bazzite-contributor-data.json
         working-directory: ${{ github.workspace }}
 
+      - name: Update Image Pull Count
+        run: |
+          curl --fail --silent --show-error --location \
+            'https://github.com/orgs/ublue-os/packages?repo_name=bazzite' \
+            --output /tmp/bazzite-packages.html
+          python3 <<'PY'
+          import math
+          import re
+          from pathlib import Path
+
+          package_page = Path('/tmp/bazzite-packages.html').read_text()
+          counts = re.findall(
+              r'octicon-download[\s\S]*?</svg>\s*([0-9]+(?:\.[0-9]+)?)([kKmMbB])\s*</span>',
+              package_page,
+          )
+          if not counts:
+              raise RuntimeError('No package download counts found')
+
+          multipliers = {'k': 1_000, 'm': 1_000_000, 'b': 1_000_000_000}
+          total = sum(float(value) * multipliers[suffix.lower()] for value, suffix in counts)
+          rounded_count = f'{math.floor(total / 1_000_000 + 0.5)}M'
+
+          index_path = Path('index.html')
+          index = index_path.read_text()
+          updated_index, replacements = re.subn(
+              r'(<span id="image-pull-count">)[^<]+(</span>)',
+              rf'\g<1>{rounded_count}\g<2>',
+              index,
+          )
+          if replacements != 1:
+              raise RuntimeError(f'Expected one image pull count, found {replacements}')
+
+          index_path.write_text(updated_index)
+          print(f'Updated image pull count from {len(counts)} packages to {rounded_count}')
+          PY
+        working-directory: ${{ github.workspace }}
+
       - name: Write GitHub Data to Repostiory
         uses: test-room-7/action-update-file@6b8249d09d5926fbae288c0bb640757f09ec7ce0 # v2
         with:
             file-path: |
               bazzite-repo-data.json
               bazzite-contributor-data.json
+              index.html
             commit-msg: Bazzite GitHub Data Refresh
             github-token: ${{ secrets.GITHUB_TOKEN }}

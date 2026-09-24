@@ -365,18 +365,16 @@ jQuery(document).ready(function() {
       animDelay = 0;
 
       mainContributors.forEach(function(contributor) {
-        document.getElementById('contributor-container').innerHTML += '<div class="github-profile-badge animate" data-anim-type="fadeInUp" style="animation-delay:' + animDelay + 'ms;" data-user="' + contributor + '"></div';
+        document.getElementById('image-pull-badge').insertAdjacentHTML('beforebegin', '<div class="github-profile-badge animate" data-anim-type="fadeInUp" style="animation-delay:' + animDelay + 'ms;" data-user="' + contributor + '"></div>');
         animDelay += 40;
       });
 
-      const widgets = document.getElementsByClassName('github-profile-badge');
+      const widgets = document.querySelectorAll('.github-profile-badge[data-user]');
       for (let i = 0; i < widgets.length; i++) {
           fillWidget(widgets[i]);
       }
 
-      var pullCount = "40M+"
-
-      document.getElementById('contributor-container').innerHTML += '<div class="github-profile-badge always-expanded animate" data-anim-type="fadeInUp" style="animation-delay:' + animDelay + 'ms;"><a href="https://github.com/orgs/ublue-os/packages?repo_name=bazzite" target="_blank" class="github-profile-badge-wrapper"><div class="github-profile-badge-img-wrapper"><i class="fa-solid fa-layer-group"></i></div><div class="github-profile-badge-name-wrapper"><p class="github-profile-badge-name">' + pullCount + ' Image Pulls</p></div></a></div>';
+      document.getElementById('image-pull-badge').style.animationDelay = animDelay + 'ms';
       animDelay += 40;
 
       jQuery.ajax({
