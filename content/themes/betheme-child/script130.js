@@ -553,6 +553,11 @@ jQuery(document).ready(function() {
     jQuery('#nvidia-gpu-option span').text(
       pickerState.device === 'htpc' ? 'Nvidia GTX 1660 or RTX series' : 'Nvidia'
     );
+    jQuery('#nvidia-gpu-option img')
+      .attr('src', pickerState.device === 'htpc'
+        ? 'content/uploads/2026/09/nvidia-rtx.svg'
+        : 'content/uploads/2026/09/nvidia.svg')
+      .attr('alt', pickerState.device === 'htpc' ? 'Nvidia RTX' : 'Nvidia');
 
     jQuery('.handheld-only').toggle(pickerState.device === 'handheld');
 
