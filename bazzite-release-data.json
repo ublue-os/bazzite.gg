@@ -34,12 +34,24 @@
     "immutable": false,
     "prerelease": false,
     "created_at": "2026-09-28T16:55:44Z",
-    "updated_at": "2026-09-28T18:12:21Z",
+    "updated_at": "2026-09-28T18:27:39Z",
     "published_at": "2026-09-28T18:12:21Z",
     "assets": [],
     "tarball_url": "https://api.github.com/repos/ublue-os/bazzite/tarball/44.20260928.1",
     "zipball_url": "https://api.github.com/repos/ublue-os/bazzite/zipball/44.20260928.1",
-    "body": "This is an automatically generated changelog for release `44.20260928.1`.\n\nFrom previous `stable` version `44.20260928` there have been the following changes. **One package per new version shown.**\n\n### Major packages\n| Name | Version |\n| --- | --- |\n| **Kernel** | 7.2.7-ogc1.1 |\n| **Kernel (Nvidia LTS)** | 6.18.52-ogc1.1 |\n| **Firmware** | 20260810-1 |\n| **Mesa** | 26.2.2-3 |\n| **Gamescope** | 3.16.29^2-1 |\n| **Gamescope Session** | 0~20260920git.0232e0c-1 |\n| **MangoHUD** | 0.8.4-2 |\n| **InputPlumber** | 0.81.0-3 |\n| **OpenGamepadUI** | 0.46.1-8 |\n| **PowerStation** | 0.8.4-2 |\n| **SteamOS-Manager** | 0~20260919.gitc865242-1 |\n| **UMU Launcher** | 1.4.4-1 |\n| **Bazaar** | 0.9.3-4 |\n| **Distrobox** | 1.8.2.5-1 |\n| **Gnome** | 50.4-1 |\n| **KDE** | 6.7.5-1 |\n| **Waydroid** | 1.6.3-1 |\n| **Waydroid (Nvidia)** | 0.1.2-2 |\n| **Nvidia Open** | 615.71.09-2 |\n| **Nvidia LTS** | 580.178.04-2 |\n\n### Commits\n| Hash | Subject | Author |\n| --- | --- | --- |\n| **[36bbef1](https://github.com/ublue-os/bazzite/commit/36bbef1ea1ba0ab3e7e25ca0a36a6aa86c644a16)** | fix: Remove unneeded msedit desktop icon. We normally remove all TUI apps desktop icons and this one was missed - sorry! | Kyle Gospodnetich |\n| **[c8e497b](https://github.com/ublue-os/bazzite/commit/c8e497bb32ffce6a061353e969e996599b64e65f)** | Testing (#5917) | Kyle Gospodnetich |\n\n\n\n### How to rebase\nFor current users, type the following to rebase to this version:\n```bash\n# For this branch (if latest):\nbazzite-rollback-helper rebase stable\n# For this specific image:\nbazzite-rollback-helper rebase 44.20260928.1\n```\n"
+    "body": "This is an automatically generated changelog for release `44.20260928.1`.\r\n\r\nFrom previous `stable` version `44.20260928` there have been the following changes. **One package per new version shown.**\r\n\r\n### Major packages\r\n| Name | Version |\r\n| --- | --- |\r\n| **Kernel** | 7.2.7-ogc1.1 |\r\n| **Kernel (Nvidia LTS)** | 6.18.52-ogc1.1 |\r\n| **Firmware** | 20260810-1 |\r\n| **Mesa** | 26.2.2-3 |\r\n| **Gamescope** | 3.16.29^2-1 |\r\n| **Gamescope Session** | 0~20260920git.0232e0c-1 |\r\n| **MangoHUD** | 0.8.4-2 |\r\n| **InputPlumber** | 0.81.0-3 |\r\n| **OpenGamepadUI** | 0.46.1-8 |\r\n| **PowerStation** | 0.8.4-2 |\r\n| **SteamOS-Manager** | 0~20260919.gitc865242-1 |\r\n| **UMU Launcher** | 1.4.4-1 |\r\n| **Bazaar** | 0.9.3-4 |\r\n| **Distrobox** | 1.8.2.5-1 |\r\n| **Gnome** | 50.4-1 |\r\n| **KDE** | 6.7.5-1 |\r\n| **Waydroid** | 1.6.3-1 |\r\n| **Waydroid (Nvidia)** | 0.1.2-2 |\r\n| **Nvidia Open** | 615.71.09-2 |\r\n| **Nvidia LTS** | 580.178.04-2 |\r\n\r\n### Commits\r\n| Hash | Subject | Author |\r\n| --- | --- | --- |\r\n| **[36bbef1](https://github.com/ublue-os/bazzite/commit/36bbef1ea1ba0ab3e7e25ca0a36a6aa86c644a16)** | fix: Remove unneeded msedit desktop icon. We normally remove all TUI apps desktop icons and this one was missed - sorry! | Kyle Gospodnetich |\r\n\r\n\r\n\r\n### How to rebase\r\nFor current users, type the following to rebase to this version:\r\n```bash\r\n# For this branch (if latest):\r\nbazzite-rollback-helper rebase stable\r\n# For this specific image:\r\nbazzite-rollback-helper rebase 44.20260928.1\r\n```\r\n",
+    "reactions": {
+      "url": "https://api.github.com/repos/ublue-os/bazzite/releases/398502406/reactions",
+      "total_count": 4,
+      "+1": 2,
+      "-1": 0,
+      "laugh": 2,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    }
   },
   {
     "url": "https://api.github.com/repos/ublue-os/bazzite/releases/397981142",
