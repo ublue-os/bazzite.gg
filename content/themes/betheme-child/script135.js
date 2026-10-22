@@ -418,26 +418,16 @@ jQuery(document).ready(function() {
   const asusHardware = ['asus'];
 
   if(jQuery('.changelog').length > 0) {
-    //Show changelog
+    //Show changelog (stable releases only; filtered in releases.yml)
     jQuery.ajax({
       url : "/bazzite-release-data.json",
       dataType: "json",
       success : function (data) {
         var changelogs = '';
-        var count = 0
         for ( const e of data ) {
-          if ( e.prerelease == true ) {
-            continue;
-          }
-
-          if ( count > 3 ) {
-            break;
-          }
-
           changelogs += '\r\n# ' + e.name + '\r\n';
           changelogs += e.body;
-          count += 1;
-        };
+        }
         var changelogHtml = marked.parse(changelogs);
         jQuery('.changelog').html(changelogHtml);
       }
