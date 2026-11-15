@@ -572,10 +572,8 @@ jQuery(document).ready(function() {
       jQuery('#image-builder').addClass('is-complete');
       jQuery('#image-builder-result').removeClass('is-obscured');
       jQuery('#image-builder-result .image-name').text(imagename);
-      jQuery('.button-download').attr('href', 'https://download.bazzite.gg/' + imagename + '-stable-amd64.iso');
       jQuery('.button-liveiso').attr('href', 'https://download.bazzite.gg/' + imagename + '-stable-live-amd64.iso');
       jQuery('.button-torrent').attr('href', getTorrentURL(imagename));
-      jQuery('.sha256').attr('href', 'https://download.bazzite.gg/' + imagename + '-stable-amd64.iso-CHECKSUM');
       jQuery('.sha256-liveiso').attr('href', 'https://download.bazzite.gg/' + imagename + '-stable-live-amd64.iso-CHECKSUM');
       jQuery('.sig-liveiso').attr('href', 'https://download.bazzite.gg/' + imagename + '-stable-live-amd64.iso.sig');
       jQuery('.ghcr-details').attr('href', 'https://ghcr.io/ublue-os/' + imagename);
@@ -597,7 +595,7 @@ jQuery(document).ready(function() {
     var showNvidiaWarning = imagename && pickerState.device === 'htpc' && pickerState.gpu === 'nvidia';
     warningOverlay.toggleClass('hidden-fade', !showNvidiaWarning).toggleClass('shown-fade', showNvidiaWarning);
     jQuery('#image-builder-result').toggleClass('has-warning', showNvidiaWarning);
-    jQuery('#image-builder-result a.button-liveiso, #image-builder-result a.button-download, #image-builder-result a.button-torrent')
+    jQuery('#image-builder-result a.button-liveiso, #image-builder-result a.button-torrent')
       .attr('tabindex', showNvidiaWarning ? '-1' : '0');
   }
 
@@ -727,11 +725,11 @@ jQuery(document).ready(function() {
     if (jQuery(this).is(':checked')) {
       overlay.addClass('hidden-fade').removeClass('shown-fade');
       jQuery('#image-builder-result').removeClass('has-warning');
-      jQuery('#image-builder-result a.button-liveiso, #image-builder-result a.button-download, #image-builder-result a.button-torrent')
+      jQuery('#image-builder-result a.button-liveiso, #image-builder-result a.button-torrent')
         .attr('tabindex', '0');
     } else {
       overlay.removeClass('hidden-fade').addClass('shown-fade');
-      jQuery('#image-builder-result a.button-liveiso, #image-builder-result a.button-download, #image-builder-result a.button-torrent')
+      jQuery('#image-builder-result a.button-liveiso, #image-builder-result a.button-torrent')
         .attr('tabindex', '-1');
     }
   });

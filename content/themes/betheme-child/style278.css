@@ -840,13 +840,11 @@ code {
   color: #abc4ff;
 }
 
-.button-download-container,
 .button-torrent-container,
 .button-liveiso-container {
   margin: 20px 0px;
 }
 
-.button-download,
 .button-torrent,
 .button-liveiso {
   background-image: linear-gradient(130deg, rgb(5, 70, 173) 0%, rgb(138, 43, 226) 100%);
@@ -858,21 +856,17 @@ code {
   transition: background-color 0.1s ease-in-out;
 }
 
-.button-download:hover,
 .button-torrent:hover,
 .button-liveiso:hover {
   background-image: none;
   background-color:#000!important;
 }
 
-.button-download > .button_label,
 .button-torrent > .button_label,
 .button-liveiso > .button_label {
   line-height: 18px;
 }
 
-.button-download > .button_label,
-.button-download > .button_icon,
 .button-torrent > .button_label,
 .button-torrent > .button_icon,
 .button-liveiso > .button_label,
@@ -1601,19 +1595,16 @@ d-topics-list > iframe {
   margin-top: 2px;
 }
 
-.sha256,
 .sha256-liveiso {
   margin-top: 13px;
   margin-left: 15px;
 }
 
-.sha256 .nerd-icon-inline,
 .sha256-liveiso .nerd-icon-inline {
   color: #ccc;
   font-size: 25px;
 }
 
-.sha256:hover .nerd-icon-inline, 
 .sha256-liveiso:hover .nerd-icon-inline {
   color: #fff;
 }
@@ -1957,7 +1948,6 @@ d-topics-list > iframe {
     max-width: inherit;
   }
 
-  .sha256,
   .sha256-liveiso {
     margin-top: 16px;
   }
@@ -2065,7 +2055,6 @@ d-topics-list > iframe {
   }
 
   .ghcr-details,
-  .sha256,
   .sha256-liveiso,
   .sig-liveiso {
     display: none;
@@ -2081,14 +2070,6 @@ d-topics-list > iframe {
   .anticheat > span {
     text-align: center;
     width: 100%;
-  }
-
-  .iso-selection .button-download-container > a {
-    width: 80%;
-  }
-
-  .iso-selection .button-download-container > a .button_label {
-    margin: auto !important;
   }
 
   .iso-selection .button-torrent-container > a {
@@ -2288,12 +2269,5 @@ d-topics-list > iframe {
   margin-right: 8px;
   cursor: pointer;
   accent-color: #ff8484;
-}
-
-.button-download {
-    margin-left: 20px;
-    padding: 5px!important;
-    font-size: 10px!important;
-    background: none!important;
 }
 
